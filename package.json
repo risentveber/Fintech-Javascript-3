@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run unit-tests && npm run lint",
-    "lint": "eslint --fix */tasks.js",
-    "unit-tests": "mocha */test.js"
+    "lint": "eslint ./`git rev-parse --abbrev-ref HEAD | sed 's/[^0-9]//g'`/tasks.js",
+    "unit-tests": "mocha ./`git rev-parse --abbrev-ref HEAD | sed 's/[^0-9]//g'`/test.js"
   },
   "author": "",
   "license": "ISC",
