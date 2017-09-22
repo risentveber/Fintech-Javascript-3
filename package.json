@@ -4,9 +4,9 @@
   "description": "Homeworks for frontend part of tinkoff fintech 3 school",
   "main": "index.js",
   "scripts": {
-    "test": "npm run unit-tests && npm run lint",
-    "lint": "eslint ./`git rev-parse --abbrev-ref HEAD | sed 's/[^0-9]//g'`/tasks.js",
-    "unit-tests": "mocha ./`git rev-parse --abbrev-ref HEAD | sed 's/[^0-9]//g'`/test.js"
+    "test": "echo $TRAVIS_BRANCH; if [ -z \"$TRAVIS_BRANCH\" ]; then export TRAVIS_BRANCH=`git rev-parse --abbrev-ref HEAD`; fi; export LESSON=`echo $TRAVIS_BRANCH | sed 's/[^0-9]//g'`; npm run unit-tests && npm run lint",
+    "lint": "eslint ./$LESSON/tasks.js",
+    "unit-tests": "mocha ./$LESSON/test.js"
   },
   "author": "",
   "license": "ISC",
