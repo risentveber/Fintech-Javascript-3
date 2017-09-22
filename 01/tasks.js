@@ -59,7 +59,7 @@ function printNumbers(max, cols) {
  * @return {string}
  */
 function rle(input) {
-
+  return "hello"
 }
 
 // console.log(rle('LLLKKFJJJJJJJJJDDDDDSSKQQQNNAAAAAGG'));
