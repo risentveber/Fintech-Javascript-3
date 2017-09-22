@@ -4,9 +4,9 @@
   "description": "Homeworks for frontend part of tinkoff fintech 3 school",
   "main": "index.js",
   "scripts": {
-    "test": "npm run unit-tests && npm run lint",
-    "lint": "eslint --fix */tasks.js",
-    "unit-tests": "mocha */test.js"
+    "test": "npm run --silent unit-tests && npm run --silent lint",
+    "lint": "eslint ./01/tasks.js",
+    "unit-tests": "mocha --reporter=spec ./01/test.js"
   },
   "author": "",
   "license": "ISC",
