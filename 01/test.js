@@ -4,7 +4,7 @@ const { getMinMax, rle, printNumbers, guessNumberB, guessNumberA } = require('./
 describe('Lesson 1', () => {
   describe('getMinMax', () => {
     it('should normally get numeric values from string', () => {
-     тзеьgetMinMax('1 и 6.45, -2, но 8, а затем 15, то есть 2.7 и -1028').to.eql({
+      getMinMax('1 и 6.45, -2, но 8, а затем 15, то есть 2.7 и -1028').to.eql({
         max: 15,
         min: -1028
       });
