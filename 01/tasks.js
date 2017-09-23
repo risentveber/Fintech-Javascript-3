@@ -5,6 +5,42 @@
  * '1 и 6.45, -2, но 8, а затем 15, то есть 2.7 и -1028' => { min: -1028, max: 15 }
  */
 function getMinMax(string) {
+	let array = [];
+	let buffer = string;
+	let number_int = null, number_float = null;
+
+	for (let i = 0; i < buffer.length; i++){
+		number_float = parseFloat(buffer.slice(i));
+		if (!isNaN(number_float)){
+			array.push(number_float);
+			i += number_float.toString().length ;
+		}	
+	}	
+
+	sort();
+
+	return {
+		min: array[0],
+		max: array[array.length - 1]
+	}
+
+	function sort(){
+		let exit = null;
+		let temp;
+
+		while (!exit) 
+		{
+			exit = true;
+			for (let i = 0; i < (array.length - 1); i++) 
+				if (array[i] > array[i + 1]) 
+    			{
+    				temp = array[i];
+    				array[i] = array[i + 1];
+     				array[i + 1] = temp;
+     				exit = false; 
+    			}
+ 		}
+	}
 
 }
 
