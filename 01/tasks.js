@@ -107,10 +107,13 @@ function rle(input) {
       if (counter != 1) {
         ansStr += counter;
       }
-      counter = 0;
+      counter = 1;
       ansStr += input[i];
       curChar = input[i];
     }
+  }
+  if (counter != 1) {
+    ansStr += counter;
   }
   return ansStr;
 }
