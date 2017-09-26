@@ -16,6 +16,3 @@ function rle(input) {
   }
   return (output);
 }
-
-console.log(rle('AAAAB'));
-
