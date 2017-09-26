@@ -8,17 +8,19 @@ function getMinMax(string) {
   if (!string.length) {
     return null;
   }
-  let arrStr = string.split(/[ ,:;!?`"&|()<>{}\[\]\r\n/\\~]+/);
-  let minNum = 1/0;
-  let maxNum = -1/0;
+  const arrStr = string.split(/[ ,:;!?`"&|()<>{}[\]\r\n/\\~]+/);
+  let minNum = 1 / 0;
+  let maxNum = -1 / 0;
+
   for (let i = 0; i < arrStr.length; ++i) {
-    let curNum = parseFloat(arrStr[i]);
+    const curNum = parseFloat(arrStr[i]);
+
     if (curNum) {
       minNum = Math.min(minNum, curNum);
       maxNum = Math.max(maxNum, curNum);
     }
   }
-  return {min: minNum, max: maxNum};
+  return { min: minNum, max: maxNum };
 }
 
 /* ============================================= */
@@ -29,8 +31,12 @@ function getMinMax(string) {
  * @return {number} число под номером х
  */
 function fibonacciSimple(x) {
-  if (x === 0) return 0;
-  if (x === 1) return 1;
+  if (x === 0) {
+    return 0;
+  }
+  if (x === 1) {
+    return 1;
+  }
   return fibonacciSimple(x - 1) + fibonacciSimple(x - 2);
 }
 
@@ -46,7 +52,8 @@ function fibonacciWithCache(x) {
   let myX = x;
   let firstFib = 0;
   let secondFib = 1;
-  while(myX) {
+
+  while (myX) {
     secondFib += firstFib;
     firstFib = secondFib - firstFib;
     --myX;
@@ -73,19 +80,21 @@ function fibonacciWithCache(x) {
  */
 function printNumbers(max, cols) {
   let ansStr = '';
-  let rows = Math.ceil(max / cols);
+  const rows = Math.ceil(max / cols);
+
   for (let curRow = 0; curRow < rows; ++curRow) {
     for (let curCol = 0; curCol < cols; ++curCol) {
-      let curNum = curCol * rows + curRow;
+      const curNum = curCol * rows + curRow;
+
       if (!Math.floor(curNum / 10)) {
         ansStr += ' ';
-      } 
+      }
       ansStr += curNum;
       if (curNum === max) {
         return ansStr;
       }
-      if (curCol != cols - 1) {
-        ansStr += ' ';  
+      if (curCol !== cols - 1) {
+        ansStr += ' ';
       }
     }
     ansStr += '\n';
@@ -103,28 +112,25 @@ function rle(input) {
   if (!input.length) {
     return '';
   }
-  let curChar = input[0];
-  let ansStr = '' + input[0];
+  let ansStr = input[0];
   let counter = 1;
+
   for (let i = 1; i < input.length; ++i) {
-    if (curChar === input[i]) {
+    if (ansStr[ansStr.length - 1] === input[i]) {
       ++counter;
     } else {
-      if (counter != 1) {
+      if (counter !== 1) {
         ansStr += counter;
       }
       counter = 1;
       ansStr += input[i];
-      curChar = input[i];
     }
   }
-  if (counter != 1) {
+  if (counter !== 1) {
     ansStr += counter;
   }
   return ansStr;
 }
-
-
 
 module.exports = {
   getMinMax,
