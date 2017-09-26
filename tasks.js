@@ -6,28 +6,28 @@
  */
 function getMinMax(string) {
 
-	var arr = [];
-
+    var arr = [];
     var j = 0;
-   for(var i = 0; i < string.length; i++){
-       if(!isNaN(parseFloat(string.substring(i, string.length)))) {
-           // var k = i;
-           arr[j] = parseFloat(string.substring(i,string.length));
-           var s = String(arr[j]);
-           i += s.length;
-           j++;
-       }
-   }
-    var min = arr[0];
-    var max = min;
-    for (i = 0; i < arr.length; ++i) {
-        if (arr[i] > max) max = arr[i];
-        if (arr[i] < min) min = arr[i];
+    for (var i = 0; i < string.length; i++) {
+        if (!isNaN(parseFloat(string.substring(i, string.length)))) {
+            // var k = i;
+            arr[j] = parseFloat(string.substring(i, string.length));
+            var s = String(arr[j]);
+            i += s.length;
+            j++;
+        }
     }
-
-   var result = {max: max, min: min};
-
-   return result;
+    if(!isNaN(arr))
+        return {};
+	
+    var minimum = 0,
+	maximum = 0;
+    for (i = 0; i < arr.length; ++i) {
+        if (arr[i] > maximum) maximum = arr[i];
+        if (arr[i] < minimum) minimum = arr[i];
+    }
+    
+    return {max: maximum, min: minimum};
 }
 
 /* ============================================= */
