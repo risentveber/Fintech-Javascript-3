@@ -5,7 +5,22 @@
  * '1 и 6.45, -2, но 8, а затем 15, то есть 2.7 и -1028' => { min: -1028, max: 15 }
  */
 function getMinMax(string) {
+  if (!string.length) {
+    return null;
+  }
+  const arrStr = string.split(/[ ,:;!?`"&|()<>{}[\]\r\n/\\~]+/);
+  let minNum = 1 / 0;
+  let maxNum = -1 / 0;
 
+  for (let i = 0; i < arrStr.length; ++i) {
+    const curNum = parseFloat(arrStr[i]);
+
+    if (curNum) {
+      minNum = Math.min(minNum, curNum);
+      maxNum = Math.max(maxNum, curNum);
+    }
+  }
+  return { min: minNum, max: maxNum };
 }
 
 /* ============================================= */
@@ -16,7 +31,13 @@ function getMinMax(string) {
  * @return {number} число под номером х
  */
 function fibonacciSimple(x) {
-  return x;
+  if (x === 0) {
+    return 0;
+  }
+  if (x === 1) {
+    return 1;
+  }
+  return fibonacciSimple(x - 1) + fibonacciSimple(x - 2);
 }
 
 /* ============================================= */
@@ -28,7 +49,16 @@ function fibonacciSimple(x) {
  * @return {number} число под номером х
  */
 function fibonacciWithCache(x) {
-  return x;
+  let myX = x;
+  let firstFib = 0;
+  let secondFib = 1;
+
+  while (myX) {
+    secondFib += firstFib;
+    firstFib = secondFib - firstFib;
+    --myX;
+  }
+  return firstFib;
 }
 
 /* ============================================= */
@@ -49,18 +79,57 @@ function fibonacciWithCache(x) {
  * @return {string}
  */
 function printNumbers(max, cols) {
+  let ansStr = '';
+  const rows = Math.ceil(max / cols);
 
+  for (let curRow = 0; curRow < rows; ++curRow) {
+    for (let curCol = 0; curCol < cols; ++curCol) {
+      const curNum = curCol * rows + curRow;
+
+      if (!Math.floor(curNum / 10)) {
+        ansStr += ' ';
+      }
+      ansStr += curNum;
+      if (curNum === max) {
+        return ansStr;
+      }
+      if (curCol !== cols - 1) {
+        ansStr += ' ';
+      }
+    }
+    ansStr += '\n';
+  }
 }
 
 /* ============================================= */
 
 /**
  * Реализуйте RLE-сжатие: AAAB -> A3B, BCCDDDEEEE -> BC2D3E4
- * @param  {string} value
+ * @param  {string} input
  * @return {string}
  */
 function rle(input) {
+  if (!input.length) {
+    return '';
+  }
+  let ansStr = input[0];
+  let counter = 1;
 
+  for (let i = 1; i < input.length; ++i) {
+    if (ansStr[ansStr.length - 1] === input[i]) {
+      ++counter;
+    } else {
+      if (counter !== 1) {
+        ansStr += counter;
+      }
+      counter = 1;
+      ansStr += input[i];
+    }
+  }
+  if (counter !== 1) {
+    ansStr += counter;
+  }
+  return ansStr;
 }
 
 module.exports = {
