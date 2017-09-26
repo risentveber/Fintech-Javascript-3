@@ -44,6 +44,9 @@ function fibonacciSimple(x) {
  * @param {number} x номер числа
  * @return {number} число под номером х
  */
+var fibonacciNumbers=[];
+fibonacciNumbers.push(0);
+fibonacciNumbers.push(1);
 function fibonacciWithCache(x) {
   if(x===0) {
     return x;
@@ -80,13 +83,27 @@ function fibonacciWithCache(x) {
  * @param  {number} cols количество столбцов
  * @return {string}
  */
+function matrixArray(rows,columns){
+  var arr = new Array();
+  for(var i=0; i<columns; i++){
+    arr[i] = new Array();
+    for(var j=0; j<rows; j++){
+      arr[i][j] = columns*j+i;//вместо i+j+1 пишем любой наполнитель. В простейшем случае - null
+    }
+  }
+   return arr;
+}
+
 function printNumbers(max, cols) {
   var rows=Math.floor(max/cols+1);
   var str="";
   var myMatrix = matrixArray(cols,rows);
   for (var i=0;  i < rows; ++i){
     for (var j=0; j< cols; ++j){
-      if(myMatrix[i][j]<10 && j===0){
+      if(myMatrix[i][j]>max){
+            str+="";
+      }
+      else if(myMatrix[i][j]<10 && j===0){
         str+=" "+myMatrix[i][j];
       }
       else if(myMatrix[i][j]<10 && j!==0){
@@ -95,19 +112,25 @@ function printNumbers(max, cols) {
       else if(j===0){
         str+=myMatrix[i][j];
       }
-      else if(myMatrix[i][j]>max){
-        str+="   ";
-      }
+      // else if(myMatrix[i][j]>max){
+      //   str+="   ";
+      // }
+
       else{
         str+=" "+myMatrix[i][j];
       }
 
     }
-      console.log(str);
-      str = "";
+    if(i!==(rows-1)) {
+        str += "\n";
+    }
   }
-
+  return str;
 }
+console.log(printNumbers(1,4))
+
+
+
 
 /* ============================================= */
 
@@ -117,16 +140,7 @@ function printNumbers(max, cols) {
  * @return {string}
  */
 
-function matrixArray(rows,columns){
-  var arr = new Array();
-  for(var i=0; i<columns; i++) {
-    arr[i] = new Array();
-    for (var j = 0; j < rows; j++) {
-      arr[i][j] = columns * j + i;
-    }
-  }
-  return arr;
-}
+
 function rle(input) {
   var count=0;
   var rleString="";
@@ -155,6 +169,7 @@ function rle(input) {
   return rleString;
 }
 
+console.log();
 module.exports = {
   getMinMax,
   rle,
