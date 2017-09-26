@@ -18,5 +18,5 @@ function getMinMax(str) {
     x += '';
     str = str.slice(x.length);
   }
-  return {min: min, max: max};
+  return {max: max, min: min};
 }
