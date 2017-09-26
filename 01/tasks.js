@@ -100,7 +100,7 @@ function rle(input) {
   let curChar = input[0];
   let ansStr = '' + input[0];
   let counter = 1;
-  for (let i = 0; i < input.length; ++i) {
+  for (let i = 1; i < input.length; ++i) {
     if (curChar === input[i]) {
       ++counter;
     } else {
