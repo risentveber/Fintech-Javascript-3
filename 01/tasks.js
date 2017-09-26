@@ -77,10 +77,16 @@ function printNumbers(max, cols) {
   for (let curRow = 0; curRow < rows; ++curRow) {
     for (let curCol = 0; curCol < cols; ++curCol) {
       let curNum = curCol * rows + curRow;
-      if (!curNum / 10) {
+      if (!Math.floor(curNum / 10)) {
         ansStr += ' ';
       } 
       ansStr += curNum;
+      if (curNum === max) {
+        return ansStr;
+      }
+      if (curCol != cols - 1) {
+        ansStr += ' ';  
+      }
     }
     ansStr += '\n';
   }
