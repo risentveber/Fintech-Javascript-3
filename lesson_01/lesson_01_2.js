@@ -14,5 +14,3 @@ function fibonacciSimple(x) {
     return 0;
   }
 }
-
-console.log(fibonacciSimple(3))

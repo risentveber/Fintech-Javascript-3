@@ -127,26 +127,24 @@ function printNumbers(max, cols) {
  * @return {string}
  */
 function rle(input) {
-  let countSymbols = 0;
-  let finalString = String();
+  let a0 = input[0];
+  let numberCount = 1;
+  let finalString = '';
 
-  for (let i = 1; i < input.length+1; i++) {
-    countSymbols = countSymbols + 1;
-    if (input[i - 1] === input[i]) {
-      if (i === input.length) {
-        finalString = finalString + input[i - 1] + (countSymbols + 1);
-      } else {
-        continue;
-      }
+  for (let i = 1; i <= input.length; i++) {
+
+    if (input[i] === a0) {
+      numberCount += 1;
     } else {
-      if (countSymbols === 1 || countSymbols === 0) {
-        finalString = finalString + input[i - 1];
-      } else {
-        finalString = finalString + input[i - 1] + countSymbols;
+      finalString += a0;
+      if (numberCount !== 1) {
+        finalString += numberCount;
       }
-      countSymbols = 0;
+      numberCount = 1;
+      a0 = input[i];
     }
   }
+
   return finalString;
 }
 
