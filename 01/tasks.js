@@ -4,9 +4,32 @@
  * @return {{min: number, max: number}} объект с минимумом и максимумом
  * '1 и 6.45, -2, но 8, а затем 15, то есть 2.7 и -1028' => { min: -1028, max: 15 }
  */
-function getMinMax(string) {
-
+function getParseString(string){
+	let arr=[]; let arrFloat=[]; 
+	arr = string.split(' '); 
+	let i=0; 
+	while (i<arr.length){ 
+		arrFloat[i]=parseFloat(arr[i]); 
+		i++; 
+	} 
+	var positivArr = arrFloat.filter(i => !isNaN(i)); 
+	return positivArr;
 }
+
+function MinMax(numbers) {
+	let sorted = numbers.sort((a,b) => a - b);
+	console.log(sorted);
+	return {
+		min: sorted[0],
+		max: sorted[sorted.length - 1]
+	}
+}
+
+function getMinMax(string) {
+	return MinMax(getParseString(string));
+}
+
+//getMinMax('1 и 6.45, -2, но 8, а затем 15, то есть 2.7 и -1028');
 
 /* ============================================= */
 
@@ -16,7 +39,8 @@ function getMinMax(string) {
  * @return {number} число под номером х
  */
 function fibonacciSimple(x) {
-  return x;
+	if (x < 2)  return x;
+	return fibonacciSimple(x - 1) + fibonacciSimple(x - 2);
 }
 
 /* ============================================= */
@@ -27,8 +51,17 @@ function fibonacciSimple(x) {
  * @param {number} x номер числа
  * @return {number} число под номером х
  */
+let cache = {};
 function fibonacciWithCache(x) {
-  return x;
+	if (x in cache){
+		return cache[x];
+	}
+	else {
+		if (x < 2)  return x;
+		let result = fibonacciWithCache(x - 1) + fibonacciWithCache(x - 2);
+		cache[x] = result;
+		return result;	
+	}
 }
 
 /* ============================================= */
