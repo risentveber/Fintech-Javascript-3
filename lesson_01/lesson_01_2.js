@@ -6,7 +6,13 @@
 function fibonacciSimple(x) {
   if (x > 2) {
     return fibonacciSimple(x - 1) + fibonacciSimple(x - 2);
-  } else {
+  }
+  if (x === 2 || x === 1) {
     return 1;
   }
+  if (x === 0) {
+    return 0;
+  }
 }
+
+console.log(fibonacciSimple(3))
