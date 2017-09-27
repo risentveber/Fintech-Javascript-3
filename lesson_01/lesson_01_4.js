@@ -25,5 +25,3 @@ function rle(input) {
   return finalString;
 
 }
-
-console.log(rle('LLLKKFJJJJJJJJJDDDDDSSKQQQNNAAAAAGG'))
