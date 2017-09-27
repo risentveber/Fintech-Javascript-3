@@ -8,17 +8,15 @@ function getMinMax(string) {
   if (!string.length) {
     return null;
   }
-  const arrStr = string.split(/[ ,:;!?`"&|()<>{}[\]\r\n/\\~]+/);
+  const arrStr = string.match(/-?\d+(\.\d+)?/gi);
   let minNum = 1 / 0;
   let maxNum = -1 / 0;
 
   for (let i = 0; i < arrStr.length; ++i) {
     const curNum = parseFloat(arrStr[i]);
 
-    if (curNum && curNum !== 0) {
-      minNum = Math.min(minNum, curNum);
-      maxNum = Math.max(maxNum, curNum);
-    }
+    minNum = Math.min(minNum, curNum);
+    maxNum = Math.max(maxNum, curNum);
   }
   return { min: minNum, max: maxNum };
 }
@@ -42,7 +40,7 @@ function fibonacciSimple(x) {
 
 /* ============================================= */
 
-let cacheArray = { 0: 0, 1: 1 };
+let cacheArray = [0, 1];
 
 /**
  * Напишите функцию для вычисления числа Фибоначчи с мемоизацией:
@@ -52,10 +50,10 @@ let cacheArray = { 0: 0, 1: 1 };
  */
 function fibonacciWithCache(x) {
   if (!cacheArray[x] && cacheArray[x] !== 0) {
-    const sizeOfCounted = Object.keys(cacheArray).length;
+    const sizeOfCounted = cacheArray.length;
 
     for (let curX = sizeOfCounted; curX <= x; ++curX) {
-      cacheArray[curX] = cacheArray[curX - 1] + cacheArray[curX - 2];
+      cacheArray.push(cacheArray[curX - 1] + cacheArray[curX - 2]);
     }
   }
   return cacheArray[x];
@@ -81,24 +79,23 @@ function fibonacciWithCache(x) {
 function printNumbers(max, cols) {
   let ansStr = '';
   const rows = Math.ceil((max + 1) / cols);
-  const lastLineLength = cols - cols * rows + max + 1;
+  const lastLineLength = (cols - cols * rows + max + 1);
 
   for (let curRow = 0; curRow < rows; ++curRow) {
-    const curCols = lastLineLength * (curRow === rows - 1) || cols;
+    let curNum = curRow;
 
-    for (let curCol = 0; curCol < curCols; ++curCol) {
-      const curNum = curCol * rows + curRow;
-
+    for (let curCol = 0; curCol < (lastLineLength * (curRow === rows - 1)
+      || cols); ++curCol) {
+      if (curCol) {
+        ansStr += ' ';
+      } else if (curRow) {
+        ansStr += '\n';
+      }
       if (!Math.floor(curNum / 10)) {
         ansStr += ' ';
       }
       ansStr += curNum;
-
-      if (curCol !== curCols - 1) {
-        ansStr += ' ';
-      } else if (curRow !== rows - 1) {
-        ansStr += '\n';
-      }
+      curNum += rows - 1 * (curCol >= lastLineLength);
     }
   }
   console.log(ansStr);
