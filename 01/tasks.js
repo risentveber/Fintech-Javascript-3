@@ -18,7 +18,7 @@ function getMinMax(str) {
         min = Math.min(min,arr[i])
         max = Math.max(max,arr[i])
     }
-    return {min: min, max:max}
+    return {max:max, min:min}
 }
 
 /* ============================================= */
@@ -80,6 +80,40 @@ function fibonacciWithCache(n) {
  * @param  {number} cols количество столбцов
  * @return {string}
  */
+function printNumbers(max, cols) {
+    let num_str = Math.ceil((max+1)/cols)
+    let final_string = ''
+    flag = false
+    for (let i = 0; i < num_str; i++){
+        for (let j = 0; j < cols; j++){
+            if (i + j*num_str <= max)
+                if (i + j*num_str < 10)
+                    final_string += ' ' + (i + j*num_str)
+                else
+                    final_string += i + j*num_str
+            if (i + j*num_str === max) {
+                flag = true
+                break;
+            }
+            if (j < cols-1 && !flag)
+                final_string += ' '
+        }
+        if (flag)
+            break;
+        if (i < num_str - 1 && !flag)
+            final_string += '\n'
+    }
+    return final_string
+}
+
+/* ============================================= */
+
+/**
+ * Реализуйте RLE-сжатие: AAAB -> A3B, BCCDDDEEEE -> BC2D3E4
+ * @param  {string} value
+ * @return {string}
+ */
+
 function rle(input) {
     let final_str = ''
     if (input.length > 0) {
@@ -101,31 +135,6 @@ function rle(input) {
             final_str += count
     }
     return final_str
-}
-
-/* ============================================= */
-
-/**
- * Реализуйте RLE-сжатие: AAAB -> A3B, BCCDDDEEEE -> BC2D3E4
- * @param  {string} value
- * @return {string}
- */
-function printNumbers(max, cols) {
-    let num_str = Math.ceil((max+1)/cols)
-    let final_string = ''
-    for (let i = 0; i < num_str; i++){
-        for (let j = 0; j < cols; j++){
-            if (i + j*num_str <= max)
-                if (i + j*num_str < 10)
-                    final_string += ' ' + (i + j*num_str) + ' '
-                else
-                    final_string += i + j*num_str + ' '
-            else
-                final_string += '   '
-        }
-        final_string += '\n'
-    }
-  return final_string
 }
 
 module.exports = {
