@@ -45,6 +45,8 @@ describe('Lesson 1', () => {
       expect(printNumbers(11, 3)).to.eql(' 0  4  8\n 1  5  9\n 2  6 10\n 3  7 11');
       expect(printNumbers(5, 3)).to.eql(' 0  2  4\n 1  3  5');
       expect(printNumbers(1, 4)).to.eql(' 0  1');
+      expect(printNumbers(2, 2)).to.eql(' 0  2\n 1');
+      expect(printNumbers(3, 1)).to.eql(' 0\n 1\n 2\n 3');
     });
   });
 });

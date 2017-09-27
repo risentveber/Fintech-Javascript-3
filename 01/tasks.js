@@ -81,25 +81,28 @@ function fibonacciWithCache(x) {
 function printNumbers(max, cols) {
   let ansStr = '';
   const rows = Math.ceil((max + 1) / cols);
+  const lastLineLength = cols - cols * rows + max + 1;
 
   for (let curRow = 0; curRow < rows; ++curRow) {
-    for (let curCol = 0; curCol < cols; ++curCol) {
+    const curCols = lastLineLength * (curRow === rows - 1) || cols;
+
+    for (let curCol = 0; curCol < curCols; ++curCol) {
       const curNum = curCol * rows + curRow;
 
       if (!Math.floor(curNum / 10)) {
         ansStr += ' ';
       }
       ansStr += curNum;
-      if (curNum === max) {
-        console.log(ansStr);
-        return ansStr;
-      }
-      if (curCol !== cols - 1) {
+
+      if (curCol !== curCols - 1) {
         ansStr += ' ';
+      } else if (curRow !== rows - 1) {
+        ansStr += '\n';
       }
     }
-    ansStr += '\n';
   }
+  console.log(ansStr);
+  return ansStr;
 }
 /* ============================================= */
 
