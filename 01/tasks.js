@@ -5,28 +5,13 @@
  * '1 и 6.45, -2, но 8, а затем 15, то есть 2.7 и -1028' => { min: -1028, max: 15 }
  */
 function getMinMax(string) {
-  let numbPattern = /[0-9]|[.-]/i;
-  let minNumber = Infinity;
-  let maxNumber = -Infinity;
-  let tempString = String();
+  const numbersStringArray = string.split(/\D* /g);
+  let numbersArray = [];
 
-  for (let i = 0; i < string.length; i++) {
-    if (numbPattern.test(string[i])) {
-      tempString = tempString + string[i];
-      if (!numbPattern.test(string[i + 1])) {
-        // console.log(tempString);
-
-        if (+tempString > maxNumber) {
-          maxNumber = +tempString;
-        }
-        if (+tempString < minNumber) {
-          minNumber = +tempString;
-        }
-        tempString = '';
-      }
-    }
+  for (let i = 0; i < numbersStringArray.length; i++) {
+    numbersArray.push(+numbersStringArray[i]);
   }
-  return { min: minNumber, max: maxNumber };
+  return { min: Math.min.apply(null, numbersArray), max: Math.max.apply(null, numbersArray) };
 }
 
 /* ============================================= */
