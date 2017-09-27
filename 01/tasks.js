@@ -5,7 +5,15 @@
  * '1 и 6.45, -2, но 8, а затем 15, то есть 2.7 и -1028' => { min: -1028, max: 15 }
  */
 function getMinMax(string) {
-
+  var input = string;
+  var number = /-?(\d+)(\.\d+)?/g;
+  var match;
+  var max_n= - Infinity, min_n = Infinity;
+  while (match = number.exec(input)){
+    max_n = Math.max(max_n,+(match[0]));
+	min_n = Math.min(min_n,+(match[0]));
+	}
+  return ({ min: min_n, max: max_n });
 }
 
 /* ============================================= */
@@ -16,7 +24,10 @@ function getMinMax(string) {
  * @return {number} число под номером х
  */
 function fibonacciSimple(x) {
-  return x;
+  var n = x
+  if (n < 2)
+	return n;
+  return fibonacciSimple(n - 1) + fibonacciSimple(n - 2);
 }
 
 /* ============================================= */
@@ -27,8 +38,27 @@ function fibonacciSimple(x) {
  * @param {number} x номер числа
  * @return {number} число под номером х
  */
+
 function fibonacciWithCache(x) {
-  return x;
+  let memo = {};
+  memo[0] = 0;
+  memo[1] = 1;
+  function f(x) {
+    var value;
+
+    if (x in memo) {
+      value = memo[x];
+    } 
+	else {
+      if (x>=2)
+        value = f(x - 1) + f(x - 2);
+      memo[x] = value;
+    }
+
+    return value;
+  }
+
+  return f(x);
 }
 
 /* ============================================= */
@@ -49,7 +79,37 @@ function fibonacciWithCache(x) {
  * @return {string}
  */
 function printNumbers(max, cols) {
-
+  var N = max;
+  var c = cols;
+  var k = parseInt((N+1)/c)
+  var j = (N+1)%c
+  var string = ""
+  var p = 0;
+  var i,l;
+  console.log(k);
+  for (i = 0 ; i < k; i++){
+    string = (parseInt(i/10)) ? (string + "" + i) : (string + " " + i);
+    for (l = 1; l < c; l++){
+	  var num = i+ k*l + p
+	  string = (parseInt(num/10)) ? (string + " " + num) : (string + "  " + num);
+	  if (p<j){
+	   p++;
+	  }
+    }
+	string = string + "\n";
+    p = 0;	
+  }
+  if (j === 0){
+    string = string.substr(0,string.length-1);
+  }
+  else{
+    string = (parseInt(k/10)) ? (string + "" + k) : (string + " " + k);
+  }
+  for (i = 1; i<j; i++){
+    num = k+(k+1)*i
+	string = (parseInt(num/10)) ? (string + " " + num) : (string + "  " + num);
+  }
+  return string;
 }
 
 /* ============================================= */
@@ -60,7 +120,26 @@ function printNumbers(max, cols) {
  * @return {string}
  */
 function rle(input) {
-
+  var string = input
+  var i,j;
+  var symb;
+  var str = "";
+  for (i = 0; i<string.length; i++){
+    symb = string[i];
+    j=0;
+    while (string[i] === symb){
+      j++;
+	  i++;
+    }
+	i = i - 1;
+	if (j-1){
+      str = str + symb + j;
+	}
+	else{
+	  str = str + symb;
+	}
+  }
+  return str
 }
 
 module.exports = {
