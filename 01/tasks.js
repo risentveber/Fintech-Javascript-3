@@ -15,7 +15,7 @@ function getMinMax(string) {
   for (let i = 0; i < arrStr.length; ++i) {
     const curNum = parseFloat(arrStr[i]);
 
-    if (curNum) {
+    if (curNum && curNum !== 0) {
       minNum = Math.min(minNum, curNum);
       maxNum = Math.max(maxNum, curNum);
     }
@@ -42,6 +42,8 @@ function fibonacciSimple(x) {
 
 /* ============================================= */
 
+let cacheArray = { 0: 0, 1: 1 };
+
 /**
  * Напишите функцию для вычисления числа Фибоначчи с мемоизацией:
  * при повторных вызовах функция не вычисляет значения, а достает из кеша.
@@ -49,16 +51,14 @@ function fibonacciSimple(x) {
  * @return {number} число под номером х
  */
 function fibonacciWithCache(x) {
-  let myX = x;
-  let firstFib = 0;
-  let secondFib = 1;
+  if (!cacheArray[x] && cacheArray[x] !== 0) {
+    const sizeOfCounted = Object.keys(cacheArray).length;
 
-  while (myX) {
-    secondFib += firstFib;
-    firstFib = secondFib - firstFib;
-    --myX;
+    for (let curX = sizeOfCounted; curX <= x; ++curX) {
+      cacheArray[curX] = cacheArray[curX - 1] + cacheArray[curX - 2];
+    }
   }
-  return firstFib;
+  return cacheArray[x];
 }
 
 /* ============================================= */
@@ -80,7 +80,7 @@ function fibonacciWithCache(x) {
  */
 function printNumbers(max, cols) {
   let ansStr = '';
-  const rows = Math.ceil(max / cols);
+  const rows = Math.ceil((max + 1) / cols);
 
   for (let curRow = 0; curRow < rows; ++curRow) {
     for (let curCol = 0; curCol < cols; ++curCol) {
@@ -91,6 +91,7 @@ function printNumbers(max, cols) {
       }
       ansStr += curNum;
       if (curNum === max) {
+        console.log(ansStr);
         return ansStr;
       }
       if (curCol !== cols - 1) {
@@ -100,7 +101,6 @@ function printNumbers(max, cols) {
     ansStr += '\n';
   }
 }
-
 /* ============================================= */
 
 /**
