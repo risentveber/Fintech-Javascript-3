@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /**
  * найдите минимум и максимум в любой строке
  * @param  {string} string входная строка(числа отделены от других частей строки пробелами или знаками препинания)
@@ -5,7 +6,12 @@
  * '1 и 6.45, -2, но 8, а затем 15, то есть 2.7 и -1028' => { min: -1028, max: 15 }
  */
 function getMinMax(string) {
+  const regex = /[+-]?\d+(\.\d+)?/g;
+  const floats = string.match(regex).map(v => parseFloat(v));
+  const min = Math.min(...floats);
+  const max = Math.max(...floats);
 
+  return { min, max };
 }
 
 /* ============================================= */

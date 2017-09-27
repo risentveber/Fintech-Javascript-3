@@ -16,7 +16,7 @@ describe('Lesson 1', () => {
     });
   });
 
-  describe('task 2 fibonacciSimple', () => {
+/*  describe('task 2 fibonacciSimple', () => {
     it('should compute fibonacci number', () => {
       expect(fibonacciSimple(1)).to.be(1);
       expect(fibonacciSimple(6)).to.be(8);
@@ -46,5 +46,5 @@ describe('Lesson 1', () => {
       expect(printNumbers(5, 3)).to.eql(' 0  2  4\n 1  3  5');
       expect(printNumbers(1, 4)).to.eql(' 0  1');
     });
-  });
+  });*/
 });
