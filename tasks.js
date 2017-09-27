@@ -5,29 +5,29 @@
  * '1 и 6.45, -2, но 8, а затем 15, то есть 2.7 и -1028' => { min: -1028, max: 15 }
  */
 function getMinMax(string) {
+  var arr = [];
+  var j = 0,
+    i = 0,
+    min = 0,
+    max = 0;
 
-    var arr = [];
-    var j = 0;
-    for (var i = 0; i < string.length; i++) {
-        if (!isNaN(parseFloat(string.substring(i, string.length)))) {
-            // var k = i;
-            arr[j] = parseFloat(string.substring(i, string.length));
-            var s = String(arr[j]);
-            i += s.length;
-            j++;
-        }
+  for (i = 0; i < string.length; i++) {
+    if (!isNaN(parseFloat(string.substring(i, string.length)))) {
+      arr[j] = parseFloat(string.substring(i, string.length));
+      var s = String(arr[j]);
+
+      i += s.length;
+      j++;
     }
-    if(!isNaN(arr))
-        return {};
-	
-    var minimum = 0,
-	maximum = 0;
-    for (i = 0; i < arr.length; ++i) {
-        if (arr[i] > maximum) maximum = arr[i];
-        if (arr[i] < minimum) minimum = arr[i];
-    }
-    
-    return {max: maximum, min: minimum};
+  }
+  if (!isNaN(arr)) {
+    return {};
+  }
+  for (i = 0; i < arr.length; ++i) {
+    if (arr[i] > max) { max = arr[i]; }
+    if (arr[i] < min) { min = arr[i]; }
+  }
+  return { max: max, min: min };
 }
 
 /* ============================================= */
@@ -51,9 +51,9 @@ function fibonacciSimple(x) {
  */
 function fibonacciWithCache(x) {
 
-     let arr = [];
+    let arr = [];
 
-    if(!isNaN(arr[x]))
+    if (!isNaN(arr[x]))
         return arr[x];
 
     var a = 1,
@@ -88,19 +88,26 @@ function fibonacciWithCache(x) {
  */
 function printNumbers(max, cols) {
 
-	var str = '';
-
+    var str = '';
     if (max > 100)
         return str;
 
     var rows = Math.ceil(max/cols);
 
-    for (var i=0; i < rows; i++) {
-        for (var j=0; j < cols; j++)
-            str += (i + j * rows) + " ";
-        str += '\n';
+    for (var i = 0; i < rows; i++) {
+        for (var j = 0; j < cols; j++) {
+            if (!Math.trunc((i + j * rows) / 10) && j){
+                str += '  ';
+            } else{
+                str += ' ';
+            }
+            str += i + j * rows;
+            if (i + j * rows === max)
+                break;
+        }
+        if (j != cols - 1 && i != rows - 1)
+            str += '\n';
     }
-
     return str;
 }
 
@@ -120,11 +127,11 @@ function rle(input) {
 
         str += input[i];
         var k = 1;
-        for(j = i + 1; j <= input.length; j++) {
+        for (j = i + 1; j <= input.length; j++) {
             if (input[i] === input[j]) {
                 k++;
             }else{
-                if( k != 1)
+                if ( k != 1)
                     str += k;
                 break;
             }
