@@ -5,29 +5,29 @@
  * '1 и 6.45, -2, но 8, а затем 15, то есть 2.7 и -1028' => { min: -1028, max: 15 }
  */
 function getMinMax(string) {
-  var arr = [];
-  var j = 0,
-    i = 0,
-    min = 0,
-    max = 0;
 
-  for (i = 0; i < string.length; i++) {
-    if (!isNaN(parseFloat(string.substring(i, string.length)))) {
-      arr[j] = parseFloat(string.substring(i, string.length));
-      var s = String(arr[j]);
-
-      i += s.length;
-      j++;
+    let arr = [];
+    var j = 0;
+    const len = string.length;
+    for (var i = 0; i < len; i++) {
+        if (!isNaN(parseFloat(string.substring(i, len)))) {
+            // var k = i;
+            arr[j] = parseFloat(string.substring(i, len));
+            let s = String(arr[j]);
+            i += s.length;
+            j++;
+        }
     }
-  }
-  if (!isNaN(arr)) {
-    return {};
-  }
-  for (i = 0; i < arr.length; ++i) {
-    if (arr[i] > max) { max = arr[i]; }
-    if (arr[i] < min) { min = arr[i]; }
-  }
-  return { max: max, min: min };
+    if(!isNaN(arr))
+        return {};
+
+    var minimum = arr[0];
+    var maximum = minimum;
+    for (i = 0; i < len; ++i) {
+        if (arr[i] > maximum) maximum = arr[i];
+        if (arr[i] < minimum) minimum = arr[i];
+    }
+    return {maximum, minimum};
 }
 
 /* ============================================= */
@@ -49,25 +49,31 @@ function fibonacciSimple(x) {
  * @param {number} x номер числа
  * @return {number} число под номером х
  */
-function fibonacciWithCache(x) {
+let fibonacciWithCache;
 
-    let arr = [];
+function fib(x) {
 
-    if (!isNaN(arr[x]))
-        return arr[x];
+    let cache = {};
+    let res;
 
-    var a = 1,
-        b = 1;
-    arr[1] = a;
-    arr[2] = b;
-    for (var i = 3; i <= x; i++) {
-        var c = a + b;
-        a = b;
-        b = c;
-        arr[i] = b;
-    }
-    return arr[x];
+    return x => {
+        if (x in cache) {
+            return cache[x];
+        }
+        if (x == 0)
+            res = 0;
+
+        if (x === 1 || x === 2) {
+            res = 1;
+        } else {
+            res = fibonacciWithCache(x - 1) + fibonacciWithCache(x - 2);
+        }
+        cache[x] =res;
+        return res;
+    };
 }
+
+fibonacciWithCache = fib();
 
 /* ============================================= */
 
