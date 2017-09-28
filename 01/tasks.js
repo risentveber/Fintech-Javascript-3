@@ -76,7 +76,21 @@ function printNumbers(max, cols) {
  * @return {string}
  */
 function rle(input) {
+  let ansStr = input[0], cnt = 1;
 
+  for (let i = 1; i < input.length; i++) {
+    if (input[i] !== input[i - 1]) {
+      ansStr += (cnt > 1) ? cnt : '';
+      ansStr += input[i];
+      cnt = 1;
+    } else {
+      cnt += 1;
+    }
+  }
+  if (cnt > 1) {
+    ansStr += cnt;
+  }
+  return ansStr;
 }
 
 module.exports = {

@@ -24,7 +24,7 @@ describe('Lesson 1', () => {
     });
   });
 
-/*  describe('task 3 fibonacciWithCache', () => {
+  describe('task 3 fibonacciWithCache', () => {
     it('should compute fibonacci number with cache', () => {
       expect(fibonacciWithCache(1)).to.be(1);
       expect(fibonacciWithCache(6)).to.be(8);
@@ -32,7 +32,7 @@ describe('Lesson 1', () => {
     });
   });
 
-/*  describe('task 4 rle', () => {
+  describe('task 4 rle', () => {
     it('should convert the string correctly', () => {
       expect(rle('BCCDDDEEEE')).to.eql('BC2D3E4');
       expect(rle('AAAB')).to.eql('A3B');
@@ -40,7 +40,7 @@ describe('Lesson 1', () => {
     });
   });
 
-  describe('task 5 printNumbers', () => {
+/*  describe('task 5 printNumbers', () => {
     it('should print numbers as expected', () => {
       expect(printNumbers(11, 3)).to.eql(' 0  4  8\n 1  5  9\n 2  6 10\n 3  7 11');
       expect(printNumbers(5, 3)).to.eql(' 0  2  4\n 1  3  5');
