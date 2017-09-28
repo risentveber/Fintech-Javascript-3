@@ -39,7 +39,7 @@ function getMinMax(string) {
 
     }
 
-    return {min: mini, max: maxi;};
+    return {min: mini, max: maxi};
 
 }
 
