@@ -62,6 +62,20 @@ function fibonacciWithCache(x) {
 /* ============================================= */
 
 /**
+ * Возвращает строку из числа и пробела или число в зависимости
+ * от того, сколько символов отводится на число.
+ * 
+ * @param {number} num
+ * @return {number|string} форматированое значение
+ */
+function formatNumber(num) {
+  if (!Math.floor(num / 10)) {
+    return ' ' + num;
+  }
+  return num;
+}
+
+/**
  * Напишите функцию printNumbers, выводящую числа в столбцах
  * так, чтобы было заполнено максимальное число столбцов при
  * минимальном числе строк.
@@ -79,22 +93,19 @@ function fibonacciWithCache(x) {
 function printNumbers(max, cols) {
   let ansStr = '';
   const rows = Math.ceil((max + 1) / cols);
-  const lastLineLength = (cols - cols * rows + max + 1);
+  const lastLineLength = cols - cols * rows + max + 1;
 
   for (let curRow = 0; curRow < rows; ++curRow) {
     let curNum = curRow;
+    const curCols = lastLineLength * (curRow === rows - 1) || cols;
 
-    for (let curCol = 0; curCol < (lastLineLength * (curRow === rows - 1)
-      || cols); ++curCol) {
+    for (let curCol = 0; curCol < curCols; ++curCol) {
       if (curCol) {
         ansStr += ' ';
       } else if (curRow) {
         ansStr += '\n';
       }
-      if (!Math.floor(curNum / 10)) {
-        ansStr += ' ';
-      }
-      ansStr += curNum;
+      ansStr += formatNumber(curNum);
       curNum += rows - 1 * (curCol >= lastLineLength);
     }
   }
