@@ -83,38 +83,29 @@ function fibonacciWithCache(x) {
  * @return {string}
  */
 function printNumbers(max, cols) {
-  var k = parseInt((max + 1) / cols, 10);
-  var j = (max + 1) % cols;
   var string = '';
-  var p = 0;
+  var p = 1;
   var l;
-  var num;
-  var i;
+  var num = 0;
+  var i = 0;
 
-  for (i = 0; i < k; i++) {
+  for (i = 0; i < (parseInt((max + 1) / cols, 10) + +((max + 1) % cols > 0)); i++) {
     string += (parseInt(i / 10, 10)) ? ('' + i) : (' ' + i);
     for (l = 1; l < cols; l++) {
-      num = i + k * l + p;
-      string += (parseInt(num / 10, 10)) ? (' ' + num) : ('  ' + num);
-      if (p < j) {
+      num = i + parseInt((max + 1) / cols, 10) * l + p * (+((max + 1) % cols > 0));
+      if (p < (max + 1) % cols) {
         p++;
+      } else if (i === parseInt((max + 1) / cols, 10)) {
+        break;
       }
+      string += (parseInt(num / 10, 10)) ? (' ' + num) : ('  ' + num);
     }
     string += '\n';
-    p = 0;
+    p = 1;
   }
-  if (j === 0) {
-    string = string.substr(0, string.length - 1);
-  } else {
-    string += (parseInt(k / 10, 10)) ? ('' + k) : (' ' + k);
-  }
-  for (i = 1; i < j; i++) {
-    num = k + (k + 1) * i;
-    string += (parseInt(num / 10, 10)) ? (' ' + num) : ('  ' + num);
-  }
+  string = string.substr(0, string.length - 1);
   return string;
 }
-
 /* ============================================= */
 
 /**
