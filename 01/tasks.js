@@ -5,7 +5,7 @@
  * '1 и 6.45, -2, но 8, а затем 15, то есть 2.7 и -1028' => { min: -1028, max: 15 }
  */
 function getMinMax(string) {
-  const array = string.split(/[\s,;:]+/);
+  const array = string.split(/[\s,;:?!"]+/);
   const objectMinMax = { min: null, max: null };
 
   for (let i = 0; i < array.length; i++) {
