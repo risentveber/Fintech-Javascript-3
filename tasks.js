@@ -98,7 +98,7 @@ function printNumbers(max, cols) {
     if (max > 100)
         return str;
 
-    var rows = Math.ceil(max/cols);
+    const rows = Math.ceil(max/cols);
     var ok = true;
     for (var i = 0; i < rows; i++) {
         for (var j = 0; j < cols; j++) {
@@ -113,12 +113,10 @@ function printNumbers(max, cols) {
                     str += ' ';
                 else
                     str += '';
-            }
-            console.log(i + j * rows);
+	    }
             if((i + j * rows) < max)
                 str += i + j * rows;
             else{
-                // k = false;
                 if(ok)
                     str += max;
                 ok = false;
@@ -140,7 +138,6 @@ function rle(input) {
 	var str = '';
     var i = 0,
         j = 0;
-    //bool false = true;
     while(i < input.length){
 
         str += input[i];
