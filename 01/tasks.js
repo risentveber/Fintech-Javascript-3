@@ -87,36 +87,23 @@ const fibonacciWithCache = memoize(
  * @return {string}
  */
 function printNumbers(max, cols) {
-  var rows = (max > cols ? (max + 1) / cols : 1);
-  cols = (max > cols ? cols : max + 1);
-  var resultString = String();
+  const rowsNumber = Math.ceil((max + 1) / cols);
+  const columnsNumber = ((cols > max) ? max + 1 : cols);
+  let tempString = '';
+  let tempValue = 1;
+  let finalString = '';
 
-  for (let i = 0; i < rows ; i++) {
-    var tmpString = '';
-    var tmpNumb = i;
-    var separator = '';
+  for (let i = 0; i < rowsNumber; i++) {
+    tempValue = i;
+    for (let j = 0; j < columnsNumber; j++) {
 
-    for (let j = 0; j < cols ; j++) {
-      // console.log(String(tmpNumb + rows).length)
-      if (String(tmpNumb + rows).length === 2) {
-        separator = ' ';
-      }
-      if (String(tmpNumb + rows).length === 1) {
-        separator = '  ';
-      }
-      if (j === cols - 1) {
-        separator = '\n';
-        if (i === rows - 1) {
-          separator = '';
-        }
-      }
-      tmpString = tmpString + tmpNumb + separator;
-      tmpNumb = tmpNumb + rows;
+      tempString += ((String(tempValue).length === 2 || j === 0) ? ' ' : '  ') + ((tempValue <= max) ? tempValue : '');
+      tempValue += rowsNumber;
     }
-    resultString = resultString + ' ' + tmpString;
-    // console.log(tmpString);
+    finalString += tempString + ((i === rowsNumber - 1) ? '' : '\n');
+    tempString = '';
   }
-  return resultString;
+  return finalString;
 }
 
 /* ============================================= */
