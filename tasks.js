@@ -11,7 +11,6 @@ function getMinMax(string) {
     const len = string.length;
     for (var i = 0; i < len; i++) {
         if (!isNaN(parseFloat(string.substring(i, len)))) {
-            // var k = i;
             arr[j] = parseFloat(string.substring(i, len));
             let s = String(arr[j]);
             i += s.length;
@@ -20,14 +19,11 @@ function getMinMax(string) {
     }
     if(!isNaN(arr))
         return {};
-
-    var minimum = arr[0];
-    var maximum = minimum;
-    for (i = 0; i < len; ++i) {
-        if (arr[i] > maximum) maximum = arr[i];
-        if (arr[i] < minimum) minimum = arr[i];
-    }
-    return {maximum, minimum};
+    
+    var min = Math.min(...arr);
+    var max = Math.max(...arr);
+    
+    return {max, min};
 }
 
 /* ============================================= */
