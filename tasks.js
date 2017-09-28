@@ -99,24 +99,36 @@ function printNumbers(max, cols) {
         return str;
 
     var rows = Math.ceil(max/cols);
-
+    var ok = true;
     for (var i = 0; i < rows; i++) {
         for (var j = 0; j < cols; j++) {
-            if (!Math.trunc((i + j * rows) / 10) && j){
-                str += '  ';
-            } else{
-                str += ' ';
+
+            if (!Math.trunc((i + j * rows) / 10)) {
+                if(j)
+                    str += '  ';
+                else
+                    str += ' ';
+            }else{
+                if(j)
+                    str += ' ';
+                else
+                    str += '';
             }
-            str += i + j * rows;
-            if (i + j * rows === max)
-                break;
+            console.log(i + j * rows);
+            if((i + j * rows) < max)
+                str += i + j * rows;
+            else{
+                // k = false;
+                if(ok)
+                    str += max;
+                ok = false;
+            }
         }
-        if (j != cols - 1 && i != rows - 1)
+        if(j != cols - 1 && i != rows - 1)
             str += '\n';
     }
     return str;
 }
-
 /* ============================================= */
 
 /**
