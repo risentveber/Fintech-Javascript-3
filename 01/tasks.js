@@ -6,6 +6,16 @@
  */
 function getMinMax(string) {
 
+      var string = string.match(/\-?\d*\.?\d+/g);
+      string.sort(function (a, b) {
+        return a - b;
+      });
+
+      var objStr = {
+        max: string[string.length - 1],
+        min: string[0],
+      }
+      return objStr; 
 }
 
 /* ============================================= */
@@ -16,7 +26,7 @@ function getMinMax(string) {
  * @return {number} число под номером х
  */
 function fibonacciSimple(x) {
-  return x;
+  return x <= 1 ? x : fibonacciSimple(x - 1) + fibonacciSimple(x - 2);
 }
 
 /* ============================================= */
@@ -28,7 +38,16 @@ function fibonacciSimple(x) {
  * @return {number} число под номером х
  */
 function fibonacciWithCache(x) {
-  return x;
+      var memo = [0, 1];
+      var fib = function (x) {
+          var result = memo[x];
+          if (typeof result !== 'number') {
+            result = fib(x - 1) + fib(x - 2);
+            memo[x] = result;
+          }
+          return result;
+      };
+      return fib(x);
 }
 
 /* ============================================= */
@@ -49,7 +68,37 @@ function fibonacciWithCache(x) {
  * @return {string}
  */
 function printNumbers(max, cols) {
-
+  var result = [];
+   var printNumberAtPosition = (number, row, column) => {
+    if (result[row] === undefined) {
+     result[row] = [];
+    }
+    number = number < 10 ? ' ' + number : '' + number;
+    result[row][column] = number;
+   };
+   var rows = 1;
+   while (rows * cols <= max) {
+    rows++;
+   }
+   var current = 0;
+   var column = 0;
+   while (current <= max) {
+    var row = 0;
+    while (row < rows && current <= max) {
+     printNumberAtPosition(current++, row, column);
+     row++;
+    }
+    column++;
+   }
+   var str = "";
+   for (row = 0; row < result.length; row++) {
+    var buffer = [];
+    for (column = 0; column < result[row].length; column++) {
+     buffer.push(result[row][column]);
+    }
+    str += buffer.join(' ') + '\n';
+   }
+   return str.substring(0, str.length - 1);
 }
 
 /* ============================================= */
@@ -60,7 +109,16 @@ function printNumbers(max, cols) {
  * @return {string}
  */
 function rle(input) {
-
+  var n = '';
+  input.match(/(.)\1*/g).forEach(a => {
+    if(a.length > 1){
+      n += a[0] + a.length;
+    }
+    else{
+     n += a[0] 
+    }         
+  })
+  return n;
 }
 
 module.exports = {
