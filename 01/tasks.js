@@ -5,7 +5,20 @@
  * '1 и 6.45, -2, но 8, а затем 15, то есть 2.7 и -1028' => { min: -1028, max: 15 }
  */
 function getMinMax(string) {
-
+  const numInStr = string.match(/-?\d+(\.\d+)?/g);  
+  const numArr = numInStr.map(function(i) {
+  	return Number(i);
+	});
+  
+  let min = numArr[0];
+  let max = min;
+  
+  for(let i = 0; i <= numArr.length-1; ++i) {
+  	if (numArr[i] > max) max = numArr[i];
+    if (numArr[i] < min) min = numArr[i];
+  }
+  
+  return {min: min, max: max};
 }
 
 /* ============================================= */
@@ -16,7 +29,11 @@ function getMinMax(string) {
  * @return {number} число под номером х
  */
 function fibonacciSimple(x) {
-  return x;
+  if(x <= 1) {
+  	return x;
+  } else {
+  	return fibonacciSimple(x - 1) + fibonacciSimple(x - 2);
+  }
 }
 
 /* ============================================= */
@@ -28,7 +45,25 @@ function fibonacciSimple(x) {
  * @return {number} число под номером х
  */
 function fibonacciWithCache(x) {
-  return x;
+  let cache = {};
+  
+  return (x) => {
+    if (x in cache) {
+      return cache[x];
+    } else {
+      let a = 1;
+  		let b = 1;
+  
+  		for (let i = 3; i <= x; i++) {  	
+  			let c = a + b;
+    		a = b;
+    		b = c;
+  		}
+      
+      cache[x] = b;
+      return b;
+    }
+  }
 }
 
 /* ============================================= */
@@ -49,7 +84,31 @@ function fibonacciWithCache(x) {
  * @return {string}
  */
 function printNumbers(max, cols) {
+  if(max >= 100) return;
+  
+  let matrix = [];
+  let rows = Math.ceil(max/cols);
+    
+  for(let i = 0; i < rows; i++) {
+    matrix[i] = [];
 
+    for(let j = 0; j < cols; j++) {
+      let nextValue = (j === 0) ? i : matrix[i][j - 1] + rows;
+        
+      if(nextValue > max) {
+        break;
+      }
+        
+      matrix[i][j] = nextValue;
+    }
+  }
+    
+  matrix = matrix.map(function(item) {
+  	item.unshift("");
+  	return item.join(" ");
+  });
+    
+  return matrix.join("\n");
 }
 
 /* ============================================= */
@@ -60,7 +119,23 @@ function printNumbers(max, cols) {
  * @return {string}
  */
 function rle(input) {
-
+  let res = "";
+  let count = 1;
+  let char = "";
+  
+  for (let i = 0; i < input.length; i++) {
+  	if (input[i] === input[i + 1]) {
+    	++count;
+      char = input[i];
+    } else if (count === 1) {
+    	res += input[i];
+    } else {
+    	res += char + count;
+      count = 1;
+    }
+  }
+  
+  return res;
 }
 
 module.exports = {
