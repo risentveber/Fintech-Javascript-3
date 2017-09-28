@@ -17,7 +17,7 @@ function getMinMax(string) {
 
         let arr = string.match(/-?\d+(\.\d+)?/g);
 
-        if(arr.length==0){
+        if(arr.length!==0){
 
             maxi = arr[0];
             mini = arr[0];
