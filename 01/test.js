@@ -16,7 +16,7 @@ describe('Lesson 1', () => {
     });
   });
 
-/*  describe('task 2 fibonacciSimple', () => {
+  describe('task 2 fibonacciSimple', () => {
     it('should compute fibonacci number', () => {
       expect(fibonacciSimple(1)).to.be(1);
       expect(fibonacciSimple(6)).to.be(8);
@@ -24,7 +24,7 @@ describe('Lesson 1', () => {
     });
   });
 
-  describe('task 3 fibonacciWithCache', () => {
+/*  describe('task 3 fibonacciWithCache', () => {
     it('should compute fibonacci number with cache', () => {
       expect(fibonacciWithCache(1)).to.be(1);
       expect(fibonacciWithCache(6)).to.be(8);

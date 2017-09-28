@@ -22,7 +22,10 @@ function getMinMax(string) {
  * @return {number} число под номером х
  */
 function fibonacciSimple(x) {
-  return x;
+  if (x > 2) {
+    return fibonacciSimple(x - 1) + fibonacciSimple(x - 2);
+  }
+  return 1;
 }
 
 /* ============================================= */
