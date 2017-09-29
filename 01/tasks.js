@@ -6,6 +6,41 @@
  */
 function getMinMax(string) {
 
+    let l = string.length;
+    let maxi=0;
+    let mini=0;
+
+    if(l===0){
+
+        return 'Empty line!';
+    } else {
+
+        let arr = string.match(/-?\d+(\.\d+)?/g);
+
+        if(arr.length!==0){
+
+            maxi = arr[0];
+            mini = arr[0];
+            for (let i = 0; i < arr.length; i++) {
+
+                if (+arr[i] > maxi) {
+
+                    maxi = +arr[i];
+                } else {
+
+                    if (+arr[i] < mini) {
+
+                        mini = +arr[i];
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    return {min: mini, max: maxi};
+
 }
 
 /* ============================================= */
@@ -16,7 +51,12 @@ function getMinMax(string) {
  * @return {number} число под номером х
  */
 function fibonacciSimple(x) {
-  return x;
+    if (x<0){
+        return 'Incorrect data!';
+    }
+
+    return  x <= 1 ? x : fibonacciSimple(x - 1) + fibonacciSimple(x - 2);
+
 }
 
 /* ============================================= */
@@ -28,7 +68,20 @@ function fibonacciSimple(x) {
  * @return {number} число под номером х
  */
 function fibonacciWithCache(x) {
-  return x;
+
+    let val=0;
+    var arr = {};
+
+    if (x in arr){
+
+        val = arr[x];
+    } else {
+
+        val = x <= 1 ? x : fibonacciWithCache(x - 1) + fibonacciWithCache(x - 2);
+        arr[x] = val;
+    }
+
+    return val;
 }
 
 /* ============================================= */
@@ -60,6 +113,38 @@ function printNumbers(max, cols) {
  * @return {string}
  */
 function rle(input) {
+
+    let l = input.length;
+    let p = 0;
+    let i=0;
+    let c='';
+    let ans='';
+
+    if (l===0){
+
+        console.log('Empty line!');
+    } else {
+
+        while (i !== l) {
+
+            c = input[i];
+
+            while ((i !== l) && (c === input[i])) {
+                p ++;
+                i ++;
+            }
+
+            if (p <= 1) {
+                ans = ans + c;
+            } else {
+                ans = ans + c + p;
+            }
+
+            p = 0;
+        }
+        return (ans);
+    }
+
 
 }
 
