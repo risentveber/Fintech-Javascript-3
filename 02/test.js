@@ -9,9 +9,9 @@ describe('Lesson 2', () => {
 
       timer(logger);
       setTimeout(() => {
-        expect(result).to.eql(new Array(10).fill(10).map((_, i)=> i));
+        expect(result).to.eql([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
         done();
-      }, 1000);
+      }, 200);
     });
   });
 
@@ -30,7 +30,7 @@ describe('Lesson 2', () => {
       bindedFunc(4);
       expect(lastContext).to.be(null);
       expect(lastParams).to.eql([1, 3, 4]);
-      const context = {}
+      const context = {};
 
       bindedFunc = customBind(call, context, 'hello', 'work');
       bindedFunc(777);
@@ -40,7 +40,7 @@ describe('Lesson 2', () => {
   });
 
   describe('sum', () => {
-    it('should compute fibonacci number', () => {
+    it('should compute sum of passed arguments', () => {
       expect(sum(1)(2)(4)(5)()).to.be(12);
       expect(sum(1)()).to.be(1);
       expect(sum()).to.be(0);
@@ -50,12 +50,14 @@ describe('Lesson 2', () => {
   describe('anagram', () => {
     it('should check are words anagrams of each other', () => {
       expect(anagram('просветитель', 'терпеливость')).to.be.ok();
+      expect(anagram('дозревание', 'раздвоение')).to.be.ok();
+      expect(anagram('вертикаль', 'кильватер')).to.be.ok();
       expect(anagram('первый', 'терпеливость')).not.to.be.ok();
     });
   });
 
   describe('getUnique', () => {
-    it('should filter uniq values from the array', () => {
+    it('should get unique values from the array', () => {
       expect(getUnique([1, 2, 4, 2, 3, 1])).to.eql([1, 2, 4, 3]);
       expect(getUnique([1, 1, 1, 1])).to.eql([1]);
     });
@@ -65,6 +67,7 @@ describe('Lesson 2', () => {
     it('should return sorted intersection of arrays', () => {
       expect(getIntersection([1, 3, 5, 7, 9], [1, 2, 3, 4])).to.eql([1, 3]);
       expect(getIntersection([1, 3, 5, 7, 9, 10], [10, 3, 4])).to.eql([3, 10]);
+      expect(getIntersection([1, 10, 5, 7, 9, 3], [10, 3, 4])).to.eql([3, 10]);
     });
   });
 
