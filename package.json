@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run --silent unit-tests && npm run --silent lint",
-    "lint": "eslint ./01/tasks.js",
-    "unit-tests": "mocha --reporter=spec ./01/test.js",
-    "khabenko-script": "./01/khabenko_js.js"
+    "lint": "eslint ./02/tasks.js",
+    "unit-tests": "mocha --reporter=spec ./02/test.js"
   },
   "author": "",
   "license": "ISC",
@@ -21,7 +20,6 @@
     "mocha": "^3.5.0"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint": "^3.19.0"
+    "babel-eslint": "^8.0.1"
   }
 }

@@ -31,7 +31,4 @@ function printNumbers(max, cols) {
     tempString = '';
   }
   return finalString;
-
 }
-
-console.log(printNumbers(17, 5));
