@@ -3,7 +3,7 @@
  * Доп. задание: предложите несколько вариантов решения.
  */
 function timer(logger = console.log) {
-  for (var i = 0; i < 10; i++) {
+  for (let i = 0; i < 10; i++) {
     setTimeout(() => {
       logger(i);
     }, 100);
@@ -33,8 +33,19 @@ function customBind(func, context, ...args) {
  * sum :: void -> Number
  */
 function sum(x) {
-  return 0;
-}
+
+  let currentSum = x;
+
+  function f(a) {
+    if (a === undefined) {
+      return currentSum;
+    } else {
+      currentSum += a;
+      return f;
+    }
+  }
+  return (x === undefined ? 0 : f);
+};
 
 /*= ============================================ */
 
