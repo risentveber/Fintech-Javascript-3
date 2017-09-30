@@ -68,7 +68,12 @@ function anagram(first, second) {
  * @return {Array<number>} массив уникальных значений, отсортированный по возрастанию
  */
 function getUnique(arr) {
-  return [];
+  let returnedObject = {};
+
+  for (let i of arr) {
+    returnedObject[i] = true;
+  }
+  return Object.keys(returnedObject);
 }
 
 /**

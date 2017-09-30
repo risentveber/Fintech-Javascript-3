@@ -4,7 +4,7 @@
  */
 function timer(logger = console.log) {
   // Первый вариант - переменная объявляется через let
-  for (var i = 0; i < 10; i++) {
+  for (let i = 0; i < 10; i++) {
     setTimeout(() => {
       logger(i);
     }, 100);

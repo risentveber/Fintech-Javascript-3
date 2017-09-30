@@ -18,8 +18,3 @@ function sum(a) {
   }
   return (a === undefined ? 0 : f);
 }
-
-x = sum(1)(2)();
-
-
-console.log(x)
