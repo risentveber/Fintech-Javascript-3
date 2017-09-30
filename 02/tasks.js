@@ -20,7 +20,7 @@ function timer(logger = console.log) {
  * @return {Function} функция с нужным контекстом
  */
 function customBind(func, context, ...args) {
-  
+
 }
 
 /*= ============================================ */
