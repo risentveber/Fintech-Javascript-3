@@ -1,14 +1,28 @@
+/* eslint-disable linebreak-style */
 /**
  * Исправьте проблему с таймером: должны выводиться числа от 0 до 9.
  * Доп. задание: предложите несколько вариантов решения.
  */
 function timer(logger = console.log) {
-  for (var i = 0; i < 10; i++) {
+  //  First method
+  for (let i = 0; i < 10; i++) {
     setTimeout(() => {
       logger(i);
     }, 100);
   }
+
+  //  Second method
+  /*
+  for (var i = 0; i < 10; i++) {
+    setTimeout(((function(n) {
+      return function() {
+        logger(n);
+      };
+    })(i)), 100);
+  }
+  */  
 }
+
 
 /*= ============================================ */
 
