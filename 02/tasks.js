@@ -4,9 +4,8 @@
  */
 function timer(logger = console.log) {
   for (var i = 0; i < 10; i++) {
-    setTimeout(() => {
-      logger(i);
-    }, 100);
+    logger(i);
+    setTimeout(() => {}, 1000);
   }
 }
 
@@ -33,7 +32,21 @@ function customBind(func, context, ...args) {
  * sum :: void -> Number
  */
 function sum(x) {
-  return 0;
+  let currentSum;
+
+  if (firstNum !== undefined) {
+    currentSum = firstNum;
+  } else {
+    return 0;
+  }
+  return function counter(secNum) {
+    if (secNum !== undefined) {
+      currentSum += secNum;
+      return counter;
+    } else {
+      return currentSum;
+    }
+  }
 }
 
 /*= ============================================ */
@@ -57,7 +70,18 @@ function anagram(first, second) {
  * @return {Array<number>} массив уникальных значений, отсортированный по возрастанию
  */
 function getUnique(arr) {
-  return [];
+  let k = 0;
+  let mass2 = [];
+
+  mass = mass.sort(function(a,b){return a-b;});
+  mass2[k] = mass[0];
+  for (let i = 1; i < mass.length; i++) {
+    if (mass[i] !== mass2[k]) {
+    mass2[k+1] = mass[i];
+    k++;
+    }
+  }
+  return mass2;
 }
 
 /**
