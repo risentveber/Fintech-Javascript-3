@@ -51,7 +51,7 @@ describe('Lesson 2', () => {
     });
   });
 
-  describe('sum', () => {
+  /*describe('sum', () => {
     it('should compute sum', () => {
       expect(sum(1)(2)(4)(5)()).to.be(12);
       expect(sum(1)()).to.be(1);
