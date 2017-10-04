@@ -45,9 +45,8 @@ function sum(x) {
  * @return {boolean}
  */
 function anagram(first, second) {
-	const firstArray = [...first].sort().join();
-	const secondArray = [...second].sort().join();
-	return  firstArray === secondArray ? true : false;
+	sorting = str => [...str].sort().join();
+	return sorting(first) === sorting(second)
 }
 
 anagram('просветитель', 'терпеливость');
