@@ -59,14 +59,14 @@ describe('Lesson 2', () => {
     });
   });
 
-  /*describe('anagram', () => {
+  describe('anagram', () => {
     it('should check are words anagrams of each other', () => {
       expect(anagram('просветитель', 'терпеливость')).to.be.ok();
       expect(anagram('первый', 'терпеливость')).not.to.be.ok();
     });
   });
 
-  describe('getUnique', () => {
+  /*describe('getUnique', () => {
     it('should get uniq values from the array', () => {
       expect(getUnique([1, 2, 4, 2, 3, 1])).to.eql([1, 2, 3, 4]);
       expect(getUnique([1, 1, 1, 1])).to.eql([1]);

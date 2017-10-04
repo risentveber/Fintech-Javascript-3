@@ -64,7 +64,14 @@ function sum(x) {
  * @return {boolean}
  */
 function anagram(first, second) {
-  return false;
+  function sortWord(str) {
+    return str.split('').sort().join();
+  }
+
+  const firstSortedWord = sortWord(first);
+  const secondSortedWord = sortWord(second);
+
+  return firstSortedWord === secondSortedWord;
 }
 
 /*= ============================================ */
