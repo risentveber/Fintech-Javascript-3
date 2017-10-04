@@ -56,10 +56,14 @@ function sum(x) {
  * @return {boolean}
  */
 function anagram(first, second) {
-  const firstUpdated = first.toLowerCase().split('').sort().join('');
-  const secondUpdated = second.toLowerCase().split('').sort().join('');
+  const secondArray = second.split('');
+  let indexValue;
 
-  return firstUpdated === secondUpdated;
+  for (let char of first) {
+    indexValue = secondArray.indexOf(char)
+    secondArray.splice(indexValue, 1);
+  }
+  return secondArray == false;
 }
 
 /*= ============================================ */
@@ -86,9 +90,11 @@ function getUnique(arr) {
  * @return {Array<number>} массив уникальных значений, отсортированный по возрастанию
  */
 function getIntersection(first, second) {
-  const filteredArr = first.filter(item => second.indexOf(item) >= 0);
+  let newArray = first.filter(function(number) {
+    return second.indexOf(number) !== -1;
+  });
 
-  return filteredArr.sort(function(a, b) {return a - b;});
+  return newArray.sort(function(a, b) { return a - b; });
 }
 
 /* ============================================= */

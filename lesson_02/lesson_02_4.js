@@ -5,8 +5,15 @@
  * @return {boolean}
  */
 function anagram(first, second) {
-  const firstUpdated = first.toLowerCase().split('').sort().join('');
-  const secondUpdated = second.toLowerCase().split('').sort().join('');
+  const secondArray = second.split('');
+  let indexValue;
 
-  return firstUpdated === secondUpdated;
+  for (let char of first) {
+    indexValue = secondArray.indexOf(char)
+    secondArray.splice(indexValue, 1);
+  }
+  return secondArray == false;
 }
+
+
+console.log(anagram('просветитель', 'терпеливость'))
