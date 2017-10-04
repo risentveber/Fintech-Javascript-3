@@ -73,7 +73,7 @@ describe('Lesson 2', () => {
     });
   });
 
-  describe('getIntersection', () => {
+  /*describe('getIntersection', () => {
     it('should return sorted intersection of arrays', () => {
       expect(getIntersection([1, 5, 7, 9, 3,], [1, 2, 3, 4])).to.eql([1, 3]);
       expect(getIntersection([1, 9, 10, 3, 5, 7], [10, 3, 4])).to.eql([3, 10]);
