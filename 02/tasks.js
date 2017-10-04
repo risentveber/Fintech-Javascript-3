@@ -75,7 +75,16 @@ function getUnique(arr) {
  * @return {Array<number>} массив уникальных значений, отсортированный по возрастанию
  */
 function getIntersection(first, second) {
-  return [];
+	var obj = {};
+	for (var i = 0; i < first.length; i++) {
+		for (var j = 0; j < second.length; j++) {
+			if (first[i] === second[j]) {
+				var str = first[i];
+				obj[str] = true;
+			}
+		}
+	}
+	return  Object.keys(obj).map(item => parseFloat(item));
 }
 
 /* ============================================= */
