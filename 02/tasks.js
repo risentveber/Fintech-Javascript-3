@@ -61,9 +61,13 @@ anagram('просветитель', 'терпеливость');
  * @return {Array<number>} массив уникальных значений, отсортированный по возрастанию
  */
 function getUnique(arr) {
-  return [];
+	var obj = {};
+	for (var i = 0; i < arr.length; i++) {
+		var str = arr[i];
+		obj[str] = true;
+	}
+	return  Object.keys(obj).map(item => parseFloat(item));
 }
-
 /**
  * Найдите пересечение двух массивов
  * [1, 3, 5, 7, 9] и [1, 2, 3, 4] → [1, 3]
