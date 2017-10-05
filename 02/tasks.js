@@ -35,9 +35,9 @@ function customBind(func, context, ...args) {
  * sum :: void -> Number
  */
 function sum(x) {
-  if (x === undefined) return 0;
-  let s = 0;
-
+  if (x === undefined) {
+    return 0;
+  }
   return s => !s ? x : sum(x + s);
 }
 /*= ============================================ */
@@ -49,8 +49,8 @@ function sum(x) {
  * @return {boolean}
  */
 function anagram(first, second) {
-  ar1 = [].slice.call(first).sort();
-  ar2 = [].slice.call(second).sort();
+  let ar1 = [].slice.call(first).sort();
+  let ar2 = [].slice.call(second).sort();
 
   if (ar1.length !== (len = ar2.length)) {
     return false;
@@ -75,12 +75,13 @@ function getUnique(arr) {
   function compare(a, b) {
     return a - b;
   }
-  if(arr === []) {
+  if (arr === []) {
     return [];
   }
   arr.sort(compare());
   let arrNew = [];
   let prev;
+
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] !== prev) {
       arrNew.push(arr[i]);
@@ -107,6 +108,7 @@ function getIntersection(first, second) {
     arr.sort(compare());
     let arrNew = [];
     let prev;
+  
     for (let i = 0; i < arr.length; i++) {
       if (arr[i] !== prev) {
         arrNew.push(arr[i]);
@@ -116,7 +118,7 @@ function getIntersection(first, second) {
     return arrNew;
   }
 
-  function inArray (array, number) {
+  function inArray(array, number) {
     for (let i = 0; i < array.length; i++) {
       if (array[i] === number) {
         return true;
@@ -126,8 +128,9 @@ function getIntersection(first, second) {
   }
 
   first = getUnique(first);
-  let len = first.length;
+  const len = first.length;
   let arrNew = [];
+
   for (let i = 0; i < len; i++) {
     if (inArray(second, first[i])) {
       arrNew.push(first[i]);
@@ -156,6 +159,7 @@ function isIsomorphic(left, right) {
     return false;
   }
   let counter = 0;
+
   for (let i = 0; i < left.length; i++) {
     if (left[i] !== right[i]) {
       counter += 1;
