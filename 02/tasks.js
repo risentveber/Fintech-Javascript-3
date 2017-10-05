@@ -2,13 +2,11 @@
  * Исправьте проблему с таймером: должны выводиться числа от 0 до 9.
  * Доп. задание: предложите несколько вариантов решения.
  */
-
 function timer(logger = console.log) {
 	for (var i = 0; i < 10; i++) {
-		let number = i;
-		setTimeout(() => {
-			logger(number);
-	}, 100);
+		setTimeout(i => {
+			logger(i);
+		}, 100, i);
 	}
 }
 
@@ -21,9 +19,9 @@ function timer(logger = console.log) {
  * @param {Array<any>} args массив аргументов
  * @return {Function} функция с нужным контекстом
  */
-function customBind(func, context, ...args) {
+const customBind = (func, context, ...args) => (...bindArgs) => func.apply(context, args.concat(bindArgs));
 
-}
+
 
 /*= ============================================ */
 
@@ -34,8 +32,12 @@ function customBind(func, context, ...args) {
  * sum :: Number -> sum
  * sum :: void -> Number
  */
-function sum(x) {
-  return 0;
+const sum = x => {
+	if (x != undefined) {
+		return y => (y != undefined ? sum(x + y) : x)
+	} else {
+		return 0
+	}
 }
 
 /*= ============================================ */
