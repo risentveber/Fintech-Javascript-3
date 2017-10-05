@@ -91,7 +91,7 @@ function anagram(first, second) {
  */
 function getUnique(arr) {
     let unique = [...new Set(arr)];
-    return unique.sort();
+    return sort(unique);
 }  
 
 /**
@@ -103,7 +103,9 @@ function getUnique(arr) {
 function getIntersection(first, second) {
   
     var m = first.length, res = [];
-    
+    if (first === second) {
+        return 0;
+    }
     for (let i = 0; i < m; i++) {
         const pos = second.indexOf(first[i]);
         if (pos >= 0) {
@@ -136,7 +138,6 @@ function isIsomorphic(left, right) {
     if(l !== r) {
         return false;
     }
-
     for (let i = 0; i < l; i++) {
         if (left[i] !== right[i]) {
             k++;
