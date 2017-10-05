@@ -97,10 +97,10 @@ function getUnique(arr) {
  * @return {Array<number>} массив уникальных значений, отсортированный по возрастанию
  */
 function getIntersection(first, second) {
+  function compare(a, b) {
+    return a - b;
+  }
   function getUnique(arr) {
-    function compare(a, b) {
-      return a - b;
-    }
     if(arr === []) {
       return [];
     }
@@ -133,7 +133,7 @@ function getIntersection(first, second) {
       arrNew.push(first[i]);
     }
   }
-  return (getUnique(arrNew).sort());
+  return (getUnique(arrNew).sort(compare));
 }
 
 /* ============================================= */
