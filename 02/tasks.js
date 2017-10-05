@@ -3,11 +3,23 @@
  * Доп. задание: предложите несколько вариантов решения.
  */
 function timer(logger = console.log) {
-  for (var i = 0; i < 10; i++) {
+  for (let i = 0; i < 10; i++) {
     setTimeout(() => {
       logger(i);
     }, 100);
   }
+}
+
+function timer2(logger = console.log) {
+  var li = []
+  for (var i = 0; i < 10; i++) {
+    li.push(i);
+  }
+  setTimeout(() => {
+    for (var n of li) {
+      logger(n);
+    }
+  }, 100)
 }
 
 /*= ============================================ */
@@ -20,7 +32,7 @@ function timer(logger = console.log) {
  * @return {Function} функция с нужным контекстом
  */
 function customBind(func, context, ...args) {
-
+  return func.apply(context, args);
 }
 
 /*= ============================================ */
@@ -33,7 +45,19 @@ function customBind(func, context, ...args) {
  * sum :: void -> Number
  */
 function sum(x) {
-  return 0;
+  if (x===undefined) {
+    if (s===undefined) {
+      return 0;
+    }
+    return s;
+  }
+  try {
+    s += x;
+  }
+  catch (err) {
+    s = x;
+  }
+  return sum;
 }
 
 /*= ============================================ */
@@ -45,7 +69,25 @@ function sum(x) {
  * @return {boolean}
  */
 function anagram(first, second) {
-  return false;
+  var dic1 = {};
+  var dic2 = {};
+  for (var n of first+second) {
+    dic1[n] = 0;
+    dic2[n] = 0;
+  }
+  for (var n of first) {
+    dic1[n] = dic1[n] + 1;
+  }
+  for (var n of second) {
+    dic2[n] = dic2[n] + 1;
+  }
+  console.log(dic1, dic2);
+  for (var n in dic1) {
+    if (dic1[n] != dic2[n]) {
+      return false;
+    }
+  }
+  return true;
 }
 
 /*= ============================================ */
@@ -57,7 +99,19 @@ function anagram(first, second) {
  * @return {Array<number>} массив уникальных значений, отсортированный по возрастанию
  */
 function getUnique(arr) {
-  return [];
+  function sortNumber(a,b) {
+    return a - b;
+  }
+  var li = [];
+  for (n of arr) {
+    if (li.includes(n)) {
+    }
+    else {
+      li.push(n);
+    }
+  }
+  li.sort(sortNumber);
+  return li;
 }
 
 /**
@@ -67,7 +121,14 @@ function getUnique(arr) {
  * @return {Array<number>} массив уникальных значений, отсортированный по возрастанию
  */
 function getIntersection(first, second) {
-  return [];
+  var li = [];
+  for (var n of first) {
+    if (second.includes(n)) {
+      li.push(n);
+    }
+  }
+  var li = getUnique(li);
+  return li;
 }
 
 /* ============================================= */
@@ -86,8 +147,18 @@ function getIntersection(first, second) {
  * @return {boolean}
  */
 function isIsomorphic(left, right) {
-
+  let diffs = 0;
+  for (var n of left) {
+    if (!(right.includes(n))) {
+      diffs += 1;
+    }
+    if (diffs > 1) {
+      return false;
+    }
+  }
+  return true;
 }
+
 
 module.exports = {
   timer,
