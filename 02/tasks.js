@@ -19,7 +19,7 @@ function timer(logger = console.log) {
  * @param {Array<any>} args массив аргументов
  * @return {Function} функция с нужным контекстом
  */
-function customBind(func, context, args) {
+function customBind(func, context, ...args) {
   return function(...bindArgs) {
     return func.call(context, ...args, ...bindArgs);
   };
