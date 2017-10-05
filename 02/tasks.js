@@ -35,6 +35,7 @@ function customBind(func, context, ...args) {
  * sum :: void -> Number
  */
 function sum(x) {
+  if (x === undefined) return 0;
   let s = 0;
 
   return s => !s ? x : sum(x + s);
