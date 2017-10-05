@@ -108,7 +108,7 @@ function getIntersection(first, second) {
     arr.sort(compare());
     let arrNew = [];
     let prev;
-  
+
     for (let i = 0; i < arr.length; i++) {
       if (arr[i] !== prev) {
         arrNew.push(arr[i]);
