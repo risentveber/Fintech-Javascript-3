@@ -20,12 +20,12 @@ function timer(logger = console.log) {
   }
   */
   // 3 var 
-  let i = 1;
+  let i = 0;
   let timerId = setInterval(function() {
       console.log(i);
-      if (i == 10) clearInterval(timerId);
+      if (i == 9) clearInterval(timerId);
       i++;
-  }, 10);
+  }, 1000);
 }
 
 /*= ============================================ */
