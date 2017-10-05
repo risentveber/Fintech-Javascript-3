@@ -102,15 +102,16 @@ function getUnique(arr) {
  */
 function getIntersection(first, second) {
   
-    var m = first.length, n = second.length, c = 0, third = [];
-  
-    for (var i = 0; i < m; i++){
-        let j = 0, k = 0;
-        while (second[j] !== first[ i ] && j < n) j++;
-        while (third[k] !== first[ i ] && k < c) k++;
-        if (j !== n && k === c) third[c++] = first[ i ];
+    var m = first.length, res = [];
+    
+    for (let i = 0; i < m; i++) {
+        const pos = second.indexOf(first[i]);
+        if (pos >= 0) {
+            res.push(second[pos]);
+            second.splice(pos, 1);
+        }
     }
-    return third.sort((a, b) => { return a < b ? -1 : 1; });
+    return res.sort((a, b) => { return a < b ? -1 : 1; });
 }
 
 /* ============================================= */
@@ -129,32 +130,19 @@ function getIntersection(first, second) {
  * @return {boolean}
  */
 function isIsomorphic(left, right) {
-  
-    let l = left.length, r = right.length;
-    var arr1 = new Array();
-    var arr2 = new Array(l + 1);
-  
-    for(let i = 0; i <= l; i ++){
-        arr2[i] = i;
+
+    let l = left.length, r = right.length, k = 0;
+
+    if(l !== r) {
+        return false;
     }
-  
-    for(let i = 1; i <= r; i ++) {
-        arr1 = arr2;
-        arr2 = new Array(l + 1);
-        for(let j = 0; j <= l; j ++) {
-            if(j === 0) arr2[j] = i;
-            else {
-                let cost = (left.charAt(i - 1) !== right.charAt(j - 1)) ? 1 : 0;
-                if(arr2[j - 1] < arr1[j] && arr2[j - 1] < arr1[j - 1] + cost)
-                    arr2[j] = arr2[j - 1] + 1;
-                else if(arr1[j] < arr1[j - 1] + cost)
-                    arr2[j] = arr1[j] + 1;
-                else
-                    arr2[j] = arr1[j - 1] + cost;
-            }
-        }
+
+    for (let i = 0; i < l; i++) {
+        if (left[i] !== right[i]) {
+            k++;
+        }    
     }
-    return arr2[l] === 1;
+    return k === 1;
 }
 
 module.exports = {
