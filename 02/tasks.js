@@ -133,7 +133,7 @@ function getIntersection(first, second) {
       arrNew.push(first[i]);
     }
   }
-  return arrNew;
+  return arrNew.sort();
 }
 /* ============================================= */
 
