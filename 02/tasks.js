@@ -49,12 +49,14 @@ function sum(x) {
  * @return {boolean}
  */
 function anagram(first, second) {
-  let len;
-  if (first.length !== (len = second.length)) {
+  ar1 = [].slice.call(first).sort();
+  ar2 = [].slice.call(second).sort();
+
+  if (ar1.length !== (len = ar2.length)) {
     return false;
   }
-  for (let i = 0; i < first.length; i++) {
-    if (first[i] !== second[len - i - 1]) {
+  for (let i = 0; i < ar1.length; i++) {
+    if (ar1[i] !== ar2[i]) {
       return false;
     }
   }
