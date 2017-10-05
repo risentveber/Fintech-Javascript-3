@@ -107,7 +107,17 @@ function getIntersection(first, second) {
  * @return {boolean}
  */
 function isIsomorphic(left, right) {
-
+	const leftArray = [...left];
+	const rightArray = [...right];
+	if (leftArray.length === rightArray.length) {
+		let counter = 0;
+		for (let i = 0; i < leftArray.length; i++) {
+			if (leftArray[i] != rightArray[i]) {
+				counter ++
+			}
+		}
+		return counter <= 1;
+	}
 }
 
 module.exports = {
