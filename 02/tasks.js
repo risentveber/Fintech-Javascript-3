@@ -52,7 +52,7 @@ function anagram(first, second) {
   let ar1 = [].slice.call(first).sort();
   let ar2 = [].slice.call(second).sort();
 
-  if (ar1.length !== (len = ar2.length)) {
+  if (ar1.length !== ar2.length) {
     return false;
   }
   for (let i = 0; i < ar1.length; i++) {
@@ -102,7 +102,7 @@ function getIntersection(first, second) {
     return a - b;
   }
   function getUnique(arr) {
-    if(arr === []) {
+    if (arr === []) {
       return [];
     }
     arr.sort(compare());
