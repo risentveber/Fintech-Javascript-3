@@ -25,7 +25,7 @@ function timer(logger = console.log) {
       console.log(i);
       if (i == 10) clearInterval(timerId);
       i++;
-  }, 100);
+  }, 10);
 }
 
 /*= ============================================ */
