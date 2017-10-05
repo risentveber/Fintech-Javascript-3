@@ -12,21 +12,20 @@ function timer(logger = console.log) {
   }*/
 
 // 2 var
-  
+/*  
     for (let i = 0; i < 10; i++) {
         (arg => setTimeout(() => {
             logger(arg);
         }, 100))(i);
     }
-/*
-  // 3 var 
-  let i = 0;
-  let timerId = setInterval(function() {
-      console.log(i);
-      if (i == 9) clearInterval(timerId);
-      i++;
-  }, 10);
-  */
+*/
+// 3 var 
+    let i = 0;
+    let timerId = setInterval(function() {
+        console.log(i);
+        if (i === 9) clearInterval(timerId);
+        i++;
+    }, 100);
 }
 
 /*= ============================================ */
