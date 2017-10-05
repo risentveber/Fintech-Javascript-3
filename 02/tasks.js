@@ -133,8 +133,9 @@ function getIntersection(first, second) {
       arrNew.push(first[i]);
     }
   }
-  return arrNew.sort();
+  return (getUnique(arrNew).sort());
 }
+
 /* ============================================= */
 
 /**
