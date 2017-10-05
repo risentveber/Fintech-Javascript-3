@@ -1,14 +1,31 @@
 /**
- * найдите минимум и максимум в любой строке
+ * Найдите минимум и максимум в любой строке
  * @param  {string} string входная строка(числа отделены от других частей строки пробелами или знаками препинания)
  * @return {{min: number, max: number}} объект с минимумом и максимумом
- * '1 и 6.45, -2, но 8, а затем 15, то есть 2.7 и -1028' => { min: -1028, max: 15 }
  */
 function getMinMax(string) {
+  const numberPattern = /[-+]?\d*\.?\d+/g;
+  let min;
+  let max;
+  const arr = string.match(numberPattern);
 
+  if (arr === null) {
+    return { min: NaN, max: NaN };
+  }
+  min = +arr[0];
+  max = +arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = +arr[i];
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+
+  return { min, max };
 }
-
-/* ============================================= */
 
 /**
  * Напишите рекурсивную функцию вычисления чисел Фибоначчи
@@ -16,10 +33,15 @@ function getMinMax(string) {
  * @return {number} число под номером х
  */
 function fibonacciSimple(x) {
-  return x;
-}
+  if (x < 1) {
+    return 0;
+  }
+  if (x === 1) {
+    return 1;
+  }
 
-/* ============================================= */
+  return fibonacciSimple(x - 1) + fibonacciSimple(x - 2);
+}
 
 /**
  * Напишите функцию для вычисления числа Фибоначчи с мемоизацией:
@@ -27,11 +49,60 @@ function fibonacciSimple(x) {
  * @param {number} x номер числа
  * @return {number} число под номером х
  */
-function fibonacciWithCache(x) {
-  return x;
-}
 
-/* ============================================= */
+const cache = [1, 1];
+
+function fibonacciWithCache(x) {
+  if (x < 1) {
+    return 0;
+  }
+  if (x === 1) {
+    return 1;
+  }
+  if (cache.length >= x + 1) {
+    return cache[x];
+  }
+  const fib = fibonacciWithCache(x - 1) + fibonacciWithCache(x - 2);
+
+  cache.push(fib);
+
+  return fib;
+}
+/*
+console.log(fibonacciWithCache(7));
+console.log(fibonacciWithCache(5));
+console.log(fibonacciWithCache(8));
+console.log(fibonacciWithCache(9));
+console.log(fibonacciWithCache(12));
+console.log(fibonacciWithCache(11));
+console.log(fibonacciWithCache(10));
+console.log(cache);
+*/
+
+/**
+ * Реализуйте RLE-сжатие: AAAB -> A3B, BCCDDDEEEE -> BC2D3E4
+ * @param  {string} value
+ * @return {string}
+ */
+function rle(input) {
+  let encoding = '';
+  let prev;
+  let count;
+  let i;
+
+  for (count = 1, prev = input[0], i = 1; i < input.length; i++) {
+    if (input[i] !== prev) {
+      encoding = encoding + prev + (count === 1 ? '' : count);
+      count = 1;
+      prev = input[i];
+    } else {
+      count += 1;
+    }
+  }
+  encoding = encoding + prev + (count === 1 ? '' : count);
+
+  return encoding;
+}
 
 /**
  * Напишите функцию printNumbers, выводящую числа в столбцах
@@ -48,19 +119,29 @@ function fibonacciWithCache(x) {
  * @param  {number} cols количество столбцов
  * @return {string}
  */
+
 function printNumbers(max, cols) {
+  max = +max;
+  cols = +cols;
+  let str = '';
+  let num = 0;
 
-}
+  for (let i = 0; i < (Math.floor((max + 1) / cols) + ((max + 1) % cols > 0 ? 1 : 0)); i++) {
+    let clmnVal = 1;
 
-/* ============================================= */
-
-/**
- * Реализуйте RLE-сжатие: AAAB -> A3B, BCCDDDEEEE -> BC2D3E4
- * @param  {string} value
- * @return {string}
- */
-function rle(input) {
-
+    str += Math.floor(i / 10) > 0 ? ('' + i) : (' ' + i);
+    for (let j = 1; j < cols; j++) {
+      num = i + Math.floor((max + 1) / cols) * j + clmnVal * ((max + 1) % cols > 0 ? 1 : 0);
+      if (clmnVal < (max + 1) % cols) {
+        clmnVal += 1;
+      } else if (i === Math.floor((max + 1) / cols)) {
+        break;
+      }
+      str += (Math.floor(num / 10)) ? (' ' + num.toString()) : ('  ' + num.toString());
+    }
+    str += '\n';
+  }
+  return str.replace(/\n$/, '');
 }
 
 module.exports = {
