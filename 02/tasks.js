@@ -3,30 +3,11 @@
  * Доп. задание: предложите несколько вариантов решения.
  */
 function timer(logger = console.log) {
-// 1 var
-/*
   for (var i = 0; i < 10; i++) {
     setTimeout(() => {
       logger(i);
     }, 100);
-  }*/
-
-// 2 var
-  
-    for (let i = 0; i < 10; i++) {
-        (arg => setTimeout(() => {
-            logger(arg);
-        }, 100))(i);
-    }
-/*
-// 3 var 
-    let i = 0;
-    let timerId = setInterval(function() {
-        console.log(i);
-        if (i === 9) clearInterval(timerId);
-        i++;
-    }, 100);
-*/    
+  }
 }
 
 /*= ============================================ */
@@ -39,10 +20,8 @@ function timer(logger = console.log) {
  * @return {Function} функция с нужным контекстом
  */
 function customBind(func, context, ...args) {
-    return function(...bindArgs) {
-        func.call(context, ...args, ...bindArgs);
-    };
-} 
+
+}
 
 /*= ============================================ */
 
@@ -54,15 +33,7 @@ function customBind(func, context, ...args) {
  * sum :: void -> Number
  */
 function sum(x) {
-    if(x === undefined){
-        return 0;
-    }
-    return function(b) {
-        if (b === undefined) { 
-            return x;
-        }
-        return sum(x + b);
-    };
+  return 0;
 }
 
 /*= ============================================ */
@@ -73,12 +44,8 @@ function sum(x) {
  * @param {string} second
  * @return {boolean}
  */
-var sort = function(str) {
-    return str.replace(/\s+/g, '').toLowerCase().split('').sort().join('');
-};
-
 function anagram(first, second) {
-    return first.trim() === second.trim() ? false : sort(first) === sort(second);
+  return false;
 }
 
 /*= ============================================ */
@@ -90,9 +57,8 @@ function anagram(first, second) {
  * @return {Array<number>} массив уникальных значений, отсортированный по возрастанию
  */
 function getUnique(arr) {
-    let unique = [...new Set(arr)];
-    return sort(unique);
-}  
+  return [];
+}
 
 /**
  * Найдите пересечение двух массивов
@@ -101,19 +67,7 @@ function getUnique(arr) {
  * @return {Array<number>} массив уникальных значений, отсортированный по возрастанию
  */
 function getIntersection(first, second) {
-  
-    var m = first.length, res = [];
-    if (first === second) {
-        return 0;
-    }
-    for (let i = 0; i < m; i++) {
-        const pos = second.indexOf(first[i]);
-        if (pos >= 0) {
-            res.push(second[pos]);
-            second.splice(pos, 1);
-        }
-    }
-    return res.sort((a, b) => { return a < b ? -1 : 1; });
+  return [];
 }
 
 /* ============================================= */
@@ -133,25 +87,14 @@ function getIntersection(first, second) {
  */
 function isIsomorphic(left, right) {
 
-    let l = left.length, r = right.length, k = 0;
-
-    if(l !== r) {
-        return false;
-    }
-    for (let i = 0; i < l; i++) {
-        if (left[i] !== right[i]) {
-            k++;
-        }    
-    }
-    return k === 1;
 }
 
 module.exports = {
-    timer,
-    customBind,
-    sum,
-    anagram,
-    getUnique,
-    getIntersection,
-    isIsomorphic
+  timer,
+  customBind,
+  sum,
+  anagram,
+  getUnique,
+  getIntersection,
+  isIsomorphic
 };
