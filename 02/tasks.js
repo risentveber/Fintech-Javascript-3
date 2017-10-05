@@ -49,8 +49,6 @@ function anagram(first, second) {
 	return sorting(first) === sorting(second)
 }
 
-anagram('просветитель', 'терпеливость');
-
 /*= ============================================ */
 
 /**
@@ -74,16 +72,23 @@ function getUnique(arr) {
  * @return {Array<number>} массив уникальных значений, отсортированный по возрастанию
  */
 function getIntersection(first, second) {
-	var obj = {};
-	for (var i = 0; i < first.length; i++) {
-		for (var j = 0; j < second.length; j++) {
-			if (first[i] === second[j]) {
-				var str = first[i];
-				obj[str] = true;
-			}
+	let obj = {};
+
+	first.forEach(firstItem => {
+		obj[firstItem] = true;
+	});
+
+	let result = [];
+
+	second.forEach(secondItem => {
+		if (secondItem in obj) {
+			result.push(secondItem);
 		}
-	}
-	return  Object.keys(obj).map(item => parseFloat(item));
+	});
+
+	return result.sort(compareNumbers = (a, b) => {
+		return a - b;
+	})
 }
 
 /* ============================================= */
