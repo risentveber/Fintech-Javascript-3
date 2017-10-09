@@ -5,16 +5,21 @@
  * sum :: Number -> sum
  * sum :: void -> Number
  */
-function sum(a) {
-  let currentSum = a;
+function sum(x) {
+  let currentSum = x;
 
-  function f(b) {
-    if (b === undefined) {
-      return currentSum;
+  if (x === undefined) {
+    return 0;
+  }
+
+  return f = a => {
+    if (a === undefined) {
+      return a;
     } else {
-      currentSum += b;
-      return f;
+      currentSum += a;
+      return f() + a;
     }
   }
-  return (a === undefined ? 0 : f);
 }
+
+console.log(sum(1)(2)(4)( ))

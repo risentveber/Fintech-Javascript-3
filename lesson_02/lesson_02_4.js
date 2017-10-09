@@ -14,6 +14,3 @@ function anagram(first, second) {
   }
   return secondArray == false;
 }
-
-
-console.log(anagram('просветитель', 'терпеливость'))

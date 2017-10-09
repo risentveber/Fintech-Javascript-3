@@ -6,5 +6,7 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind(func, context, ...args) {
-
+  return function () { // (*)
+    return func.apply(context, args);
+  };
 }
