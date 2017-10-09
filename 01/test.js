@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const expect = require('expect.js');
 const { getMinMax, rle, printNumbers, fibonacciSimple, fibonacciWithCache } = require('./tasks');
 
