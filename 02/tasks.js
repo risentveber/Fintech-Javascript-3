@@ -1,9 +1,10 @@
+/* eslint-disable linebreak-style */
 /**
  * Исправьте проблему с таймером: должны выводиться числа от 0 до 9.
  * Доп. задание: предложите несколько вариантов решения.
  */
 function timer(logger = console.log) {
-  for (var i = 0; i < 10; i++) {
+  for (let i = 0; i < 10; i++) {
     setTimeout(() => {
       logger(i);
     }, 100);
@@ -20,7 +21,9 @@ function timer(logger = console.log) {
  * @return {Function} функция с нужным контекстом
  */
 function customBind(func, context, ...args) {
-
+  return function(...moreArgs) {
+    return func.apply(context, [].slice.call(args.concat(moreArgs)));
+  };
 }
 
 /*= ============================================ */
@@ -33,7 +36,15 @@ function customBind(func, context, ...args) {
  * sum :: void -> Number
  */
 function sum(x) {
-  return 0;
+  if (this.summ === undefined) {
+    this.summ = 0;
+  }
+  if (x === undefined) {
+    return this.summ;
+  }
+  this.summ += x;
+  return sum.bind(
+    { summ: this.summ });
 }
 
 /*= ============================================ */
@@ -45,7 +56,18 @@ function sum(x) {
  * @return {boolean}
  */
 function anagram(first, second) {
-  return false;
+  if (first.length !== second.length) {
+    return false;
+  }
+  let arr1 = first.split('').sort();
+  let arr2 = second.split('').sort();
+
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+  return true;
 }
 
 /*= ============================================ */
@@ -57,7 +79,14 @@ function anagram(first, second) {
  * @return {Array<number>} массив уникальных значений, отсортированный по возрастанию
  */
 function getUnique(arr) {
-  return [];
+  let result = [];
+
+  for (let el of arr) {
+    if (!(result.some(item => (item === el)))) {
+      result.push(el);
+    }
+  }
+  return result.sort();
 }
 
 /**
@@ -67,7 +96,27 @@ function getUnique(arr) {
  * @return {Array<number>} массив уникальных значений, отсортированный по возрастанию
  */
 function getIntersection(first, second) {
-  return [];
+  let result = [];
+  let curentNumber = 0;
+
+  for (let i = 0; i < first.length; i++) {
+    let j = 0, k = 0;
+
+    // Ищем совпадение
+    while (second[j] !== first[i] && j < second.length) {
+      j++;
+    }
+    // Проверяем добавлялось ли оно в массив
+    while (result[k] !== first[i] && k < curentNumber) {
+      k++;
+    }
+    if (j !== second.length && k === curentNumber) {
+      result[curentNumber] = first[i];
+      curentNumber++;
+    }
+  }
+  result = result.sort();
+  return result;
 }
 
 /* ============================================= */
@@ -86,7 +135,17 @@ function getIntersection(first, second) {
  * @return {boolean}
  */
 function isIsomorphic(left, right) {
+  let distance = 0;
 
+  for (let i = 0; i < Math.max(left.length, right.length); i++) {
+    if (left[i] !== right[i]) {
+      distance++;
+    }
+    if (distance > 1) {
+      return false;
+    }
+  }
+  return true;
 }
 
 module.exports = {

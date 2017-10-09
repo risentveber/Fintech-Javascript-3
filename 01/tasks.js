@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /**
  * найдите минимум и максимум в любой строке
  * @param  {string} string входная строка(числа отделены от других частей строки пробелами или знаками препинания)
@@ -28,7 +29,13 @@ function fibonacciSimple(x) {
  * @return {number} число под номером х
  */
 function fibonacciWithCache(x) {
-  return x;
+  if (this.fibs === undefined) {
+    this.fibs = [0, 1, 1];
+  }
+  if (x >= this.fibs.length) {
+    this.fibs[x] = fibonacciWithCache(x - 1) + fibonacciWithCache(x - 2);
+  }
+  return this.fibs[x];
 }
 
 /* ============================================= */

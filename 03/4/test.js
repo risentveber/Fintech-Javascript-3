@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const expect = require('expect.js');
 const promiseRace = require('./task.js');
 const { delayPromise } = require('../utils.js');
