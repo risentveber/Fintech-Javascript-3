@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /**
 * Сделать функцию, которая reject'ит возвращаемый промис, передавая в качестве ошибки строку 'timeout_error',
 * если он не resolve'ится за указанный timeout, или ведет себя эквивалентно исходному.
@@ -8,7 +9,10 @@
 * @return {Promise} промис с нужным поведением
 */
 function rejectOnTimeout(promise, timeoutInMilliseconds) {
-  return Promise.resolve(null);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => reject('timeout_error'), timeoutInMilliseconds);
+    promise.then(resolve, reject);
+  });
 }
 
 module.exports = rejectOnTimeout;
