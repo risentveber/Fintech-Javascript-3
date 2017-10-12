@@ -83,7 +83,7 @@ function anagram(first, second) {
  * @return {Array<number>} массив уникальных значений, отсортированный по возрастанию
  */
 function getUnique(arr) {
-  let mySet = new Set();
+  const mySet = new Set();
 
   function inSet(value) {
     if (!mySet.has(value)) {
@@ -104,7 +104,23 @@ function getUnique(arr) {
  * @return {Array<number>} массив уникальных значений, отсортированный по возрастанию
  */
 function getIntersection(first, second) {
-  return [];
+  const elemCount = {};
+
+  first.forEach(element => {
+    if (!(element in elemCount)) {
+      elemCount[element] = 1;
+    } else {
+      elemCount[element] += 1;
+    }
+  });
+
+  return second.reduce((resultArr, currentItem) => {
+    if (currentItem in elemCount && elemCount[currentItem] > 0) {
+      resultArr.push(currentItem);
+      elemCount[currentItem] -= 1;
+    }
+    return resultArr;
+  }, []).sort((a, b) => a - b);
 }
 
 /* ============================================= */
