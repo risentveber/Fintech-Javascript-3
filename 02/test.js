@@ -86,5 +86,5 @@ describe('Lesson 2', () => {
       expect(isIsomorphic('hold', 'hell')).not.to.be.ok();
       expect(isIsomorphic('help', 'hell yeah')).not.to.be.ok();
     });
-  }); */
+  });
 });
