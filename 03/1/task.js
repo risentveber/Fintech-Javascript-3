@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /**
  * Создайте класс, обладающий следующим поведением:
  * const values = ['hello', 'javascript', 'world'];
