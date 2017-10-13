@@ -1,22 +1,29 @@
-const w3c = require('w3c-validate').createValidator();
-const glob = require('glob');
 const fs = require('fs');
+const validator = require('html-validator');
 
-// options is optional
-glob('./04/**/*.html', {}, (er, files) => {
-  files.forEach(filename => {
-    fs.readFile(filename, 'utf8', (err,data) => {
+Promise.all(
+  process.argv.slice(2).map(filename => new Promise((resolve, reject) => {
+    fs.readFile(filename, 'utf8', (err, data) => {
       if (err) {
-        return console.log('File read error: ', err);
+        reject('File read error: ', err);
       }
 
-      w3c.validate(data, validationError => {
-        if (validationError) {
-          console.log(filename, validationError.message); // error includes [{message, context}] to help understand validation errors
-        } else {
-          console.log(filename, 'is valid');
-        }
-      });
+      validator({ data, format: 'text' }).then(result => {
+        console.log(filename, result);
+        resolve(result.includes('The document validates according to the specified schema'));
+      }).catch(reject);
     });
-  });
+  }))
+).then(results => {
+  if (results.every(r => r)) {
+    console.log('All files are valid');
+    process.exit(0);
+  } else {
+    console.log('Some files are invalid');
+    process.exit(1);
+  }
+}).catch(err => {
+  console.error('Error occured:', err);
+  process.exit(1);
 });
+
