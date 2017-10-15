@@ -30,6 +30,7 @@
         "SwitchCase": 1
       }
     ],
+    "linebreak-style": 0,
     "no-restricted-imports": [1,  "lodash", "crypto", "bluebird", "setimmediate2"],
     "no-var": 2,
     "no-loop-func": 1,
