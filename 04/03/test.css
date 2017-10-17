@@ -13,14 +13,14 @@ ol > li::before {
   color: blue;
   display: inline-block;
   width: 1.5em;
-} 
+}
 
 ul {
   list-style: none;
 }
 
 ul > li::before {
-  content: "• "; 
+  content: "• ";
   color: yellow;
   display: inline-block;
   width: 1.5em;

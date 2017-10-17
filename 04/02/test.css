@@ -2,7 +2,8 @@
   border-spacing: 0;
 }
 
-.products td, th {
+.products td,
+th {
   width: 100px;
   text-align: center;
 }
@@ -12,7 +13,8 @@
   border-bottom: 1px solid black;
 }
 
-.products td:nth-child(1), th:nth-child(1) {
+.products td:nth-child(1),
+th:nth-child(1) {
   max-width: 100px;
   overflow: hidden;
   white-space: nowrap;
@@ -24,7 +26,7 @@
 }
 
 .products tbody tr:nth-child(2n) {
-  background: #ffff00;
+  background: #ff0;
 }
 
 .products tbody tr:hover {
@@ -37,12 +39,10 @@
   font-family: "Times New Roman";
 }
 
-.picture td, th {
+.picture td,
+th {
   width: 40px;
-  padding-left: 6px;
-  padding-right: 6px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding: 6px 8px;
 }
 
 .picture .this {
@@ -50,7 +50,7 @@
 }
 
 .picture .little {
-  background: #00cc99;
+  background: #0c9;
 }
 
 .picture .went {
