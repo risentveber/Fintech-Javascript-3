@@ -1,31 +1,30 @@
 body {
   font-family: "Verdana", sans-serif;
+  width: 50%;
+  margin: 10px auto;
+}
+
+body > * {
+  margin: 10px auto;
 }
 
 h1 {
-  width: 50%;
   padding: 5px 20px 5px 5px;
   font-size: 1.5em;
   text-align: right;
-  margin: 10px auto;
   background-color: gold;
   font-weight: lighter;
 }
 
 p {
-  width: 50%;
   text-indent: 20px;
   text-align: justify;
-  margin: 10px auto;
 }
 
 ul {
   list-style-type: square;
   list-style-position: inside;
   padding-left: 20px;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
   font-style: oblique;
 }
 
