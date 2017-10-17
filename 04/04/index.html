@@ -1,29 +1,137 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <title>Задание 4</title>
+    <link rel="stylesheet" type="text/css" href="http://marksheet.io/css/reset.css">
+    <link rel="stylesheet" href="test.css">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="блог, дневник, homepage">
+    <meta name="description" content="Всякие разные события, интересные и не очень, из моей жизни.">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <meta property="og:image" content="cat.jpg"/>
+    <meta property="og:title" content="Блог обо мне"/>
+    <meta property="og:description" content="Всякие разные события, интересные и не очень, из моей жизни."/>
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="OneStepCloser">
+    <meta name="twitter:title" content="Блог обо мне">
+    <meta name="twitter:description" content="Всякие разные события, интересные и не очень, из моей жизни.">
+    <meta name="twitter:image" content="cat.jpg">
+    
+    <title>Блог обо мне</title>
 </head>
 <body>
-<h1>Сделать страничку с произвольным контентом и выполнить следующие задания:</h1>
+
+<h1>Блог обо мне</h1>
+
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit
+    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+    occaecat cupidatat non proident, sunt in culpa qui officia
+    deserunt mollit anim id est laborum.
+</p>
+
 <ul>
-    <li> Подцепить шрифты Roboto и Roboto Condensed;</li>
-    <li> Заголовки должны быть Roboto Condensed, все остальное - Roboto;</li>
-    <li> Весь контент должен ограничиваться по ширине на 960px и быть по центру страницы;</li>
-    <li> Заголовок первого порядка - "Блог обо мне";</li>
-    <li> После заголовка первого порядка  Абцаз текста - анонс;</li>
-    <li> Меню с якорями на нижеследующие разделы (2, 3);</li>
-    <li> У каждого подраздела свой Подзаголовок;</li>
-    <li> После каждого Подзаголовка Абцаз текста - анонс но с меньшим кеглем;</li>
-    <li> После анонса в подразделе 2-3 абзаца просто текста;</li>
-    <li> Внутри одного раздела картинка с описанием на случай, если она не загрузится;</li>
-    <li> Внутри другого видео с youtube;</li>
-    <li> В конце страницы яндекс/гугл карта с меткой;</li>
-    <li> И видео, и карта должны быть на всю ширину контейнера и вне зависимости от размеров окна сохранять пропорции 16/9;</li>
-    <li> Внутри абзацев текста должны присутствовать слова повышенной важности, которые нужно соответствующие выделять,
-        также должны присутствовать слова, которые необходимо выделить интонационно;</li>
-    <li> Также внутри текста расставить ссылки (1-2), стилизовать под разные состояния;</li>
-    <li> Итого - 2 вида головков, 3 вида абзацев, выделения strong и em, ссылки, изображения, айфреймы с youtube, картой.</li>
+    <li><a href="#image">Картинка</a></li>
+    <li><a href="#video">Видео</a></li>
+    <li><a href="#map">Карта</a></li>
 </ul>
+
+<h2 id="image">Картинка</h2>
+<p class="subAnnounce">
+    В этом разделе будет картинка из сохранёнок автора,
+    которую тот посчитал достаточно красивой,
+    чтобы увековечить в этом ДЗ.
+</p>
+
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod
+    <a href="http://www.google.com" class="visitedLink">Посещенная ссылка</a>
+    tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+    ullamco laboris nisi ut aliquip <a href="http://www.google.com">Просто ссылка</a> ex ea commodo consequat.
+</p>
+
+<p>
+    Duis aute irure dolor in reprehenderit in voluptate velit
+    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+    occaecat cupidatat non proident,
+    <a href="http://www.google.com" class="activeLink">Активная ссылка</a>
+    sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+
+<img src="image.jpg" alt="Красивая картинка с горами"/>
+
+<h2 id="video">Видео</h2>
+
+<p class="subAnnounce">
+    Немного копипасты из интернетов о музыкальной группе, фанатом которой является ваш покорный слуга.
+</p>
+
+<p>
+    <strong>Linkin Park</strong> — американская мультиплатиновая рок-группа, основанная
+    в 1996 году под названием Xero и исполняющая музыку преимущественно
+    в стилях <em>альтернативный метал</em>, <em>ню-метал</em> и <em>рэп-метал</em> (раннее творчество),
+    <em>альтернативный рок</em>, <em>электроник-рок</em>, <em>поп</em> и <em>поп-рок</em> (позднее творчество).
+
+</p>
+
+<p>
+    Существуя с 2000 года под названием <strong>Linkin Park</strong>, группа была шесть раз
+    номинирована и два раза удостоилась награды «Грэмми». Группа обрела успех
+    благодаря дебютному альбому 2000 года под названием <em>Hybrid Theory</em>,
+    проданному тиражом более чем в 30 миллионов экземпляров (в 2010 году он
+    обрёл «бриллиантовый» статус, присуждаемый RIAA). Следующий студийный альбом,
+    <em>Meteora</em>, повторил, хоть и не превзошёл успех предыдущего, лидируя в 2003 году
+    в чарте Billboard 200. В общей сложности группа выпустила семь студийных
+    альбомов, которые разошлись общим тиражом около 100 миллионов экземпляров.
+</p>
+
+<div class="box16x9">
+    <div class="content">
+        <iframe
+                src="https://www.youtube.com/embed/CgwL14IDDJY" allowfullscreen>
+        </iframe>
+    </div>
+</div>
+
+<h2 id="map">Карта</h2>
+
+<p class="subAnnounce">
+    Немного слов об alma mater автора сайта - Высшей школе экономики, факультете компьютерных наук.
+</p>
+
+<p>
+    <strong>Факультет компьютерных наук НИУ ВШЭ</strong> готовит разработчиков и исследователей.
+    Программа обучения сформирована с учётом опыта ведущих американских и
+    европейских университетов, таких как <em>Stanford University</em> (США) и <em>EPFL</em>
+    (Швейцария), а также <em>Школы анализа данных</em> — <strong>одной из самых сильных
+    магистратур в области computer science в России</strong>.
+
+</p>
+
+<p>
+    Широкий список курсов по выбору и значительная доля программы,
+    выделенная под них, позволит каждому студенту сформировать
+    <em>свою собственную образовательную траекторию</em>.
+    В основе обучения — <strong>практика и проектная работа</strong>.
+</p>
+
+<div class="box16x9">
+    <div class="content">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1885.5148544552135!2d37.54106314693572!3d55.80595314107242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2c43e4d5d9db4ec3!2z0JLRi9GB0YjQsNGPINGI0LrQvtC70LAg0Y3QutC-0L3QvtC80LjQutC4!5e0!3m2!1sru!2sru!4v1508253531413"
+                style="border:0" allowfullscreen>
+        </iframe>
+    </div>
+</div>
+
 </body>
+
 </html>

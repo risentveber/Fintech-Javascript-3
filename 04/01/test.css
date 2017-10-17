@@ -1,1 +1,36 @@
-a { color: #fff; }
+body {
+  font-family: "Verdana", sans-serif;
+  width: 50%;
+  margin: 10px auto;
+}
+
+body > * {
+  margin: 10px auto;
+}
+
+h1 {
+  padding: 5px 20px 5px 5px;
+  font-size: 1.5em;
+  text-align: right;
+  background-color: gold;
+  font-weight: lighter;
+}
+
+p {
+  text-indent: 20px;
+  text-align: justify;
+}
+
+ul {
+  list-style-type: square;
+  list-style-position: inside;
+  padding-left: 20px;
+  font-style: oblique;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  margin: 10px calc(50% - 75px);
+  border-radius: 50%;
+}
