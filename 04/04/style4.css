@@ -1,0 +1,34 @@
+body {
+  font-size: 16px;
+  max-width: 960px;
+  font-family: 'Roboto';
+  margin: auto;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto Condensed';
+}
+
+h3 + p {
+  font-size: 0.75rem;
+}
+
+img {
+  max-width: 679px;
+  max-height: 456px;
+}
+
+.block {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;    
+}

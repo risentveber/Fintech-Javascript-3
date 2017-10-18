@@ -1,0 +1,29 @@
+body {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ol {
+  list-style-type: none;
+  counter-reset: s;
+}
+
+ul li::before {
+  color: yellow;
+  padding-right: 10px;
+  content: '•';
+}
+
+ol li {
+  counter-increment: s;
+}
+
+ol li::before {
+  color: blue;
+  padding-right: 10px;
+  content: counter(s) '.';
+}
