@@ -1,21 +1,96 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>Задание 2</title>
-</head>
-<body>
-<h1>Пустая страница, в ней создать 2 таблицы. Первая, таблица продуктов(Название продукта, Происхождение, Белки, Жиры, Углеводы):</h1>
-<ul>
-    <li> 5 ячеек в строке равной ширины </li>
-    <li> Если контент не вмещается в ячейку, она не раздвигается, в колонке Название продукта контент в одну строку и скрывается с точками, в колонке Происхождение контент становится многострочным. </li>
-    <li> Фон рядов должен чередоваться </li>
-    <li> По наведению на ряд фон должен меняться </li>
-    <li> Бордеров быть вообще не должно </li>
-    <li> Thead с нижним бордером и цветным фоном </li>
-</ul>
+  <head>
+      <meta charset="utf-8">
+      <title>Задание 2</title>
+      <link rel="stylesheet" href="style2.css">
+  </head>
+  <body>
+    <table class = "products">
+      <thead>
+        <tr>
+          <th>Название продукта</th>
+          <th>Происхождение продукта</th>
+          <th>Белки</th>
+          <th>Жиры</th>
+          <th>Углеводы</th>
+        </tr>
+      </tdead>
+      <tbody>
+        <tr>
+          <td>Первый продукт</td>
+          <td>Происхождение первого продукта</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>Второй продукт</td>
+          <td>Происхождение второго продукта</td>
+          <td>3</td>
+          <td>1</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Третий продукт</td>
+          <td>Происхождение третьего продукта</td>
+          <td>2</td>
+          <td>3</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Четвертый продукт</td>
+          <td>Происхождение четвертого продукта</td>
+          <td>3</td>
+          <td>1</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Пятый продукт</td>
+          <td>Происхождение пятого продукта</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+      </tbody>
+    </table>
 
-<h1> Вторая, как на картинке, отступ между ячейками 8px</h1>
-<image src="https://habrastorage.org/webt/59/e3/06/59e306153cd88184926845.png"></image>
-</body>
+    <table class = "piggy">
+      <tbody>
+        <tr>
+          <td>This</td>
+          <td>Little</td>
+          <td>Piggy</td>
+          <td>Went</td>
+          <td>To</td>
+          <td>Market</td>
+        </tr>
+        <tr>
+          <td colspan = "2">This</td>
+          <td>Little</td>
+          <td>Piggy</td>
+          <td>Went</td>
+          <td>To</td>
+        </tr>
+        <tr>
+          <td colspan = "4">This</td>
+          <td rowspan = "3">Little</td>
+          <td>Piggy</td>
+        </tr>
+        <tr>
+          <td rowspan = "2">This</td>
+          <td>Little</td>
+          <td>Piggy</td>
+          <td>Went</td>
+          <td>To</td>
+        </tr>
+        <tr>
+          <td>Little</td>
+          <td>Piggy</td>
+          <td>Went</td>
+          <td>To</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
 </html>
