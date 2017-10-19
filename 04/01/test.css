@@ -1,1 +1,33 @@
-a { color: #fff; }
+html {
+    font-family: Helvetica, sans-serif;
+    font-size: 32px;
+  }
+  
+  body {
+    margin: auto;
+    padding: 0 2rem;
+  }
+  
+  h1 {
+    font-size: 1rem;
+  }
+  
+  img {
+    width: 80;
+    height: 160;
+    text-align: center;
+  }
+  
+  p {
+    font-size: 1rem;
+    margin: 0 0.5rem;
+  }
+  
+  ul {
+    font-size: 0.8rem;
+    margin: 0 0.5rem;
+  }
+  
+  ul li {
+    position: relative;
+  }
