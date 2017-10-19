@@ -1,0 +1,74 @@
+body {
+    margin: 20;
+    max-width: 768px;
+    font-size: 32px;
+  }
+  
+  .first {
+    margin: 20;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .first tr:nth-child(2n) {
+    background: rgb(121, 175, 85);
+  }
+  
+  .first tr:hover {
+    background: rgb(33, 35, 168);
+  }
+  
+  .first thead {
+    border-bottom: 2px solid rgb(255, 255, 255);
+    background: rgb(248, 12, 150);
+    text-align: bottom;
+  }
+  
+  .first th {
+    padding: 8px;
+    width: 20%;
+  }
+  
+  .first td {
+    padding: 8px;
+    width: 20%;
+  }
+  
+  .first td:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .second {
+    margin: 20p;
+    border-spacing: 8px;
+  }
+  
+  .second td {
+    padding: 8px;
+  }
+  
+  .second td:nth-child(1) {
+    background: hsl(150, 50%, 50%);
+  }
+  
+  .second td:nth-child(2) {
+    background: hsl(160, 60%, 50%);
+  }
+  
+  .second td:nth-child(3) {
+    background: hsl(170, 70%, 50%);
+  }
+  
+  .second td:nth-child(4) {
+    background: hsl(180, 80%, 50%);
+  }
+  
+  .second td:nth-child(5) {
+    background: hsl(190, 90%, 50%);
+  }
+  
+  .second td:nth-child(6) {
+    background: hsl(200, 99%, 50%);
+  }
