@@ -1,0 +1,30 @@
+ul {
+    list-style-type: none;
+  }
+  
+  ul li {
+    position: relative;
+  }
+  
+  ul li::before {
+    left: -2em;
+    color: yellow;
+    content: '•';
+  }
+
+  ol li::before {
+    left: -4em;
+    color: blue;
+    content: counter(item) '.';
+  }
+  
+  ol {
+    list-style-type: none;
+    counter-reset: item;
+  }
+  
+  ol li {
+    position: relative;
+    counter-increment: item;
+  }
+  
