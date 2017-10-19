@@ -22,10 +22,15 @@
     "mocha": "^3.5.0"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "babel-eslint": "^8.0.1",
     "eslint": "^4.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "html-validator": "^2.2.3",
+=======
+    "html-validator": "^2.2.3",
+    "babel-eslint": "^8.0.1",
+>>>>>>> c28405c0a9f482f160e84b977782cec813da0946
     "stylelint": "^8.2.0",
     "stylelint-config-standard": "^17.0.0"
   }
