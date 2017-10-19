@@ -1,3 +1,7 @@
 {
   "extends": "stylelint-config-standard"
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> dfb627ab80cd27caa75e755a51ab40f131ccef3c
