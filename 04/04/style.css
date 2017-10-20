@@ -1,6 +1,6 @@
 body {
   margin: 32px;
-  padding:  0 16px;
+  padding: 16px;
   max-width: 960px;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
@@ -10,26 +10,26 @@ h1,
 h2 {
   font-family: 'Roboto Condensed', sans-serif;
 }
-  
+
 h3 + p {
   font-size: 14px;
 }
-  
+
 a {
   color: rgb(204, 34, 162);
 }
-  
+
 a:hover {
   color: rgb(14, 192, 236);
 }
-  
+
 .iframe-wrapper {
   position: relative;
   overflow: hidden;
   padding-bottom: calc(100% * 9 / 16);
   height: 0;
 }
-  
+
 iframe {
   position: absolute;
   top: 0;
@@ -38,7 +38,7 @@ iframe {
   height: 100%;
   border: 0;
 }
-  
+
 .done {
   text-decoration: line-through;
 }
