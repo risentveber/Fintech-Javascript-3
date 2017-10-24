@@ -1,0 +1,24 @@
+.menu-dark {
+    display: flex;
+    height: 65px;
+    background-color: #3e4757;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+a.menu-item {
+    height: 15px;
+    font-family: Roboto;
+    font-size: 13px;
+    letter-spacing: 0.9px;
+    color: #ffffff;
+}
+
+a.menu-item:hover {
+    color: #ffffff;
+    border-bottom: 3px solid #ffdd2d;
+    padding-bottom: 22px;
+    text-decoration: none;
+}
+

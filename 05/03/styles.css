@@ -1,0 +1,25 @@
+.rectangle {
+    height: 132px;
+    border-radius: 6px;
+    border: solid 1px #dddfe0;
+    margin: auto 11.6%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    padding: 18px;
+  }
+
+  .mytag {
+    height: 42px;
+    border-radius: 6px;
+    background-color: #eef2f7;
+    padding: 11px;
+    margin: 6px 12px;
+  }
+
+  .mybutton {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 9px;
+  }
