@@ -1,0 +1,46 @@
+.mask {
+    height: 413px;
+    background-image: linear-gradient(to right, #1489e7, #003e82);
+}
+
+.img-card {
+    height: 413px;
+}
+
+.banner-big {
+  width: 342px;
+  height: 100px;
+  font-family: Roboto;
+  font-size: 50px;
+  font-weight: 100;
+  line-height: 1;
+  color: #ffffff;
+  margin-top: 91px;
+}
+
+.banner-small {
+  width: 326px;
+  height: 48px;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+  margin-top: 18px;
+}
+
+.banner-button {
+  width: 212px;
+  height: 62px;
+  margin-top: 20px;
+}
+
+.button-apply {
+  width: 212px;
+  height: 62px;
+  border-radius: 6px;
+  font-family: Roboto;
+  font-size: 17px;
+  line-height: 1.41;
+  text-align: center;
+  background-color: #ffdd2d;
+}
