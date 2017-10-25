@@ -1,0 +1,75 @@
+@import url(//fonts.googleapis.com/css?family=Roboto:100,300,500);
+
+.banner {
+  position: relative;
+  width: 100%;
+  min-width: 1080px;
+  height: 413px;
+  background-image: linear-gradient(to right, #1489e7, #003e82);
+}
+
+.title-wrapper {
+  display: inline-block;
+  position: absolute;
+  width: 50%;
+  left: 50%;
+  height: 100%;
+}
+
+.image-wrapper {
+  display: inline-block;
+  position: absolute;
+  right: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cards {
+  transform: scale(0.995);
+  margin-left: -35px;
+  margin-top: -87px;
+  float: right;
+}
+
+.main-title {
+  width: 342px;
+  font-family: Roboto, sans-serif;
+  font-size: 50px;
+  font-weight: 100;
+  line-height: 1;
+  color: #fff;
+  margin-top: 91px;
+  margin-left: 14px;
+}
+
+.annotation {
+  width: 326px;
+  font-family: Roboto, sans serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+  margin-top: 18px;
+  margin-left: 14px;
+  font-weight: 300;
+}
+
+.button {
+  width: 212px;
+  height: 62px;
+  border-radius: 6px;
+  background-color: #ffdd2d;
+  padding-top: 19px;
+  padding-bottom: 19px;
+  font-family: Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.41;
+  text-align: center;
+  color: #333;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-left: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
