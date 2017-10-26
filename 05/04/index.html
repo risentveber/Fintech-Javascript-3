@@ -2,17 +2,48 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Задание 5.4</title>
 </head>
 <body>
-<h1>Сверстать форму. Pixel-perfect. Select делать не нужно</h1>
-<p>
-    Подробности по ссылке:
-    <a href="https://app.zeplin.io/project/58a307271a9f6d513890adc8/screen/58a3075a4ec334e848d7f333">
-        https://app.zeplin.io/project/58a307271a9f6d513890adc8/screen/58a3075a4ec334e848d7f333
-    </a>, для того чтобы получить доступ, нужно зарегестрироваться на
-    <a href="https://zeplin.io/">zeplin.io</a>, и попросить доступ у Евгения Мамаева.
-</p>
-<img src="./task.png" alt="">
+
+<div class="container">
+    <div class="data-field">
+        <img alt="Selector arrow" class="arrow" src="arrow.svg">
+        <input placeholder="ФИО">
+    </div>
+    <div class="data-field">
+        <input placeholder="Город проживания">
+    </div>
+    <div class="data-field">
+        <input placeholder="Мобильный телефон">
+    </div>
+    <div class="data-field">
+        <div class="question">
+            <span class="info">
+                Ваши данные замаскированы в целях безопасности. Для изменения информации с вами свяжется оператор колл-центра.
+            </span>
+        </div>
+        <input placeholder="Электронная почта">
+    </div>
+    <div class="choose">
+        Выберите это или другое
+    </div>
+    <div class="choice-wrapper">
+        <div class="choice-item checked">
+            <div class="choice-item-title">Это</div>
+            <div class="marker"></div>
+        </div>
+        <div class="choice-item">
+            <div class="choice-item-title">Другое</div>
+            <div class="marker"></div>
+        </div>
+    </div>
+    <div class="send-button">
+        Отправить
+    </div>
+</div>
 </body>
 </html>

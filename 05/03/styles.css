@@ -1,0 +1,74 @@
+@import url(//fonts.googleapis.com/css?family=Roboto:500);
+
+html {
+  --line-height: 1.15em;
+}
+
+.tags-wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  width: 829px;
+  border-radius: 6px;
+  border: solid 1px #dddfe0;
+  display: flex;
+  padding: 12px 18px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.tag {
+  font-family: Roboto, sans-serif;
+  font-size: 13px;
+  color: #333;
+  height: 42px;
+  border-radius: 6px;
+  background-color: #eef2f7;
+  padding: 14px 12px 13px 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  max-width: 300px;
+}
+
+.delete-button {
+  width: 11px;
+  height: 11px;
+  background-image: url("delete.svg");
+  margin-left: 12px;
+  cursor: pointer;
+}
+
+.tag-text {
+  max-width: 255px;
+  line-height: var(--line-height);
+  max-height: var(--line-height);
+  overflow: hidden;
+  position: relative;
+}
+
+.inside-tag-text::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: var(--line-height);
+  width: 43px;
+  height: var(--line-height);
+  background: linear-gradient(to right, rgba(238, 242, 247, 0), #eef2f7);
+}
+
+.inside-tag-text {
+  max-height: calc(2 * var(--line-height));
+  position: relative;
+}
+
+.new-tag {
+  flex-grow: 1;
+  font-size: 1.1em;
+  padding: 14px 12px 13px 10px;
+  outline: none;
+  border: none;
+}
