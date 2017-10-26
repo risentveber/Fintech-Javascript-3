@@ -1,0 +1,36 @@
+.container {
+  width: 829px;
+  height: 132px;
+  border-radius: 6px;
+  border: solid 1px #dddfe0;
+  margin: 25px 125px;
+}
+
+.flex-container {
+  flex-wrap: wrap;
+  display: flex;
+  margin: 12px;
+}
+
+.flex-item {
+  height: 42px;
+  border-radius: 6px;
+  background-color: #eef2f7;
+  margin: 6px;
+  display: flex;
+}
+
+.flex-item .text {
+  height: 18px;
+  font-family: Roboto;
+  font-size: 13px;
+  margin: 13px 11px;
+  color: #333;
+}
+
+.Group-Copy-4 {
+  width: 11px;
+  height: 11px;
+  margin: 15px 11px;
+  object-fit: contain;
+}

@@ -1,0 +1,24 @@
+.flex-container {
+  width: 1080px;
+  height: 65px;
+  background-color: #3e4757;
+  display: flex;
+}
+
+.flex-item {
+  height: 15px;
+  font-family: Roboto;
+  font-size: 13px;
+  letter-spacing: 0.9px;
+  color: #fff;
+  margin-top: 25px;
+  margin-right: 66px;
+}
+
+.first {
+  margin-left: 126px !important;
+}
+
+.last {
+  margin-right: 126px !important;
+}
