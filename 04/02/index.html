@@ -1,21 +1,98 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Задание 2</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
+  <link rel="stylesheet" href="test.css">
+  <meta charset="utf-8">
+  <title>Задание 2</title>
 </head>
 <body>
-<h1>Пустая страница, в ней создать 2 таблицы. Первая, таблица продуктов(Название продукта, Происхождение, Белки, Жиры, Углеводы):</h1>
-<ul>
-    <li> 5 ячеек в строке равной ширины </li>
-    <li> Если контент не вмещается в ячейку, она не раздвигается, в колонке Название продукта контент в одну строку и скрывается с точками, в колонке Происхождение контент становится многострочным. </li>
-    <li> Фон рядов должен чередоваться </li>
-    <li> По наведению на ряд фон должен меняться </li>
-    <li> Бордеров быть вообще не должно </li>
-    <li> Thead с нижним бордером и цветным фоном </li>
-</ul>
-
-<h1> Вторая, как на картинке, отступ между ячейками 8px</h1>
-<image src="https://habrastorage.org/webt/59/e3/06/59e306153cd88184926845.png"></image>
+  <h1>Первая таблица</h1>
+  <table class="products">
+    <thead>
+      <tr>
+        <th>Название продукта</th>
+        <th>Про<wbr>ис<wbr>хож<wbr>де<wbr>ние</th>
+        <th>Белки</th>
+        <th>Жиры</th>
+        <th>Углеводы</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Кабачки</td>
+        <td>Грядковое овощное</td>
+        <td>0.6</td>
+        <td>0.3</td>
+        <td>5.7</td>
+      </tr>
+      <tr>
+        <td>Кальмар</td>
+        <td>Морское животное</td>
+        <td>18.0</td>
+        <td>0.3</td>
+        <td>0.0</td>
+      </tr>
+      <tr>
+        <td>Камбала</td>
+        <td>Морское животное</td>
+        <td>16.1</td>
+        <td>2.6</td>
+        <td>0.0</td>
+      </tr>
+      <tr>
+        <td>Капуста белокочанная</td>
+        <td>Грядковое овощное</td>
+        <td>1.8</td>
+        <td>0.0</td>
+        <td>5.4</td>
+      </tr>
+      <tr>
+        <td>Капуста цветная</td>
+        <td>Грядковое овощное</td>
+        <td>2.5</td>
+        <td>0.0</td>
+        <td>4.9</td>
+      </tr>
+    </tbody>
+  </table>
+  <h1>Вторая таблица</h1>
+  <table class="picture">
+    <tbody>
+      <tr>
+        <td class="this">This</td>
+        <td class="little">Little</td>
+        <td class="piggy">Piggy</td>
+        <td class="went">Went</td>
+        <td class="to">To</td>
+        <td class="market">Market</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="this">This</td>
+        <td class="little">Little</td>
+        <td class="piggy">Piggy</td>
+        <td class="went">Went</td>
+        <td class="to">To</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="this">This</td>
+        <td rowspan="3" class="little">Little</td>
+        <td class="piggy">Piggy</td>
+      </tr>
+      <tr>
+        <td rowspan="2" class="this">This</td>
+        <td class="little">Little</td>
+        <td class="piggy">Piggy</td>
+        <td class="went">Went</td>
+        <td class="to">To</td>
+      </tr>
+      <tr>
+        <td class="little">Little</td>
+        <td class="piggy">Piggy</td>
+        <td class="went">Went</td>
+        <td class="to">To</td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 </html>

@@ -1,0 +1,57 @@
+.flex-container {
+  width: 1080px;
+  height: 413px;
+  background-image: linear-gradient(to right, #1489e7, #003e82);
+  display: flex;
+}
+
+.Cards {
+  width: 542px;
+  height: 413px;
+  object-fit: contain;
+}
+
+.block {
+  margin-left: 14px;
+}
+
+.header {
+  width: 342px;
+  height: 100px;
+  font-family: Roboto;
+  font-size: 50px;
+  font-weight: 100;
+  line-height: 1;
+  color: #fff;
+  margin-top: 91px;
+}
+
+.article {
+  width: 326px;
+  height: 48px;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+  margin-top: 18px;
+}
+
+.button {
+  width: 212px;
+  height: 62px;
+  border-radius: 6px;
+  background-color: #ffdd2d;
+  background-color: yellow;
+  margin-top: 20px;
+}
+
+.button .text {
+  width: 212px;
+  height: 24px;
+  font-family: Roboto;
+  font-size: 17px;
+  line-height: 1.41;
+  text-align: center;
+  color: #333;
+  padding-top: 19px;
+}

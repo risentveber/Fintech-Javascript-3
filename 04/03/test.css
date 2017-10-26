@@ -1,0 +1,27 @@
+/* нашла такой подход на stackoverflow */
+ol {
+  list-style: none;
+  counter-reset: li;
+}
+
+ol > li {
+  counter-increment: li;
+}
+
+ol > li::before {
+  content: counter(li);
+  color: blue;
+  display: inline-block;
+  width: 1.5em;
+}
+
+ul {
+  list-style: none;
+}
+
+ul > li::before {
+  content: "• ";
+  color: yellow;
+  display: inline-block;
+  width: 1.5em;
+}

@@ -1,0 +1,71 @@
+.products {
+  border-spacing: 0;
+}
+
+.products td,
+th {
+  width: 100px;
+  text-align: center;
+}
+
+.products thead th {
+  background: #eaf9fe;
+  border-bottom: 1px solid black;
+}
+
+.products td:nth-child(1),
+th:nth-child(1) {
+  max-width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.products tbody tr:nth-child(2n+1) {
+  background: #d9d9e1;
+}
+
+.products tbody tr:nth-child(2n) {
+  background: #ff0;
+}
+
+.products tbody tr:hover {
+  background: #abb9f7;
+}
+
+.picture {
+  border-spacing: 8px;
+  font-size: 16px;
+  font-family: "Times New Roman";
+}
+
+.picture td,
+th {
+  width: 40px;
+  padding: 6px 8px;
+}
+
+.picture .this {
+  background: #00b386;
+}
+
+.picture .little {
+  background: #0c9;
+}
+
+.picture .went {
+  background: #00e6e6;
+}
+
+.picture .piggy {
+  background: #00e6b8;
+}
+
+.picture .to {
+  background: #00bfff;
+}
+
+.picture .market {
+  background: #00b8e6;
+}
+
