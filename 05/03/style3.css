@@ -39,7 +39,7 @@ body {
   height: 11px;
   width: 11px;
   padding: 11px 12px 11px 20px;
-  background: url(img/cross.svg),linear-gradient(to right, rgba(238, 242, 247, 0), #eef2f7 25%);
+  background: url(img/cross.svg), linear-gradient(to right, rgba(238, 242, 247, 0), #eef2f7 25%);
   background-position: 60% center;
   background-repeat: no-repeat;
   border: none;

@@ -24,7 +24,7 @@ body {
   border: none;
 }
 
-.input-field[data-empty = "false"],
+.input-field[data-empty="false"],
 .input-field:valid,
 .input-field:focus {
   padding: 32px 19px 14px;
@@ -34,7 +34,7 @@ body {
   background-color: #fff;
 }
 
-.input-field[data-empty = "false"] + .field-lable,
+.input-field[data-empty="false"] + .field-lable,
 .input-field:valid + .field-lable,
 .input-field:focus + .field-lable {
   color: #74a3c7;
@@ -55,7 +55,7 @@ body {
 
 .bad-container {
   border-radius: 6px;
-  border: solid 1px #d0021b
+  border: solid 1px #d0021b;
 }
 
 .bad-lable {
@@ -162,24 +162,24 @@ body {
 }
 
 .choice-input:checked ~ .mark {
-    background-color: #ffdd2d;
+  background-color: #ffdd2d;
 }
 
 .choice-input ~ .mark::before {
-    background-color: #3e4757;
-    width: 12px;
-    height: 12px;
-    position: absolute;
-    content: '';
-    z-index: 1;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%) scale(0);
-    border-radius: 50%; 
+  background-color: #3e4757;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  content: '';
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
 }
 
 .choice-input:checked ~ .mark::before {
-  transform: translate(-50%,-50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .submit-button {
@@ -189,5 +189,5 @@ body {
   border-radius: 6px;
   border: none;
   background-color: #ffdd2d;
-  cursor: pointer;;
+  cursor: pointer;
 }
