@@ -1,0 +1,46 @@
+body {
+  font-family: Roboto, sans-serif;
+}
+
+.menu-background {
+  height: 62px;
+  background-color: #3e4757;
+  border-bottom: 3px solid #3e4757;
+}
+
+.menu {
+  margin: 0 auto;
+  padding: 0 18px;
+  max-width: 828px;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-point {
+  display: flex;
+  text-transform: uppercase;
+  border-bottom: 3px solid #3e4757;
+  padding: 28px 0 19px;
+}
+
+.active-menu-point {
+  border-bottom: 3px solid #ffdd2d;
+}
+
+.menu-point-title {
+  letter-spacing: 0.9px;
+  font-size: 13px;
+  height: 15px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-point:hover {
+  border-bottom: 3px solid #ffdd2d;
+}
+
+
+

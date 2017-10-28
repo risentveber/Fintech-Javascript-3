@@ -1,0 +1,63 @@
+body {
+  font-family: Roboto, sans-serif;
+}
+
+.order-container {
+  height: 413px;
+  background-image: linear-gradient(to right, #1489e7, #003e82);
+  overflow: hidden;
+}
+
+.order-wrapper {
+  position: relative;
+  margin: 0 0 0 -212px;
+  display: flex;
+  align-items: center;
+  height: 413px;
+  justify-content: center;
+}
+
+.img-container {
+  position: relative;
+  height: 413px;
+}
+
+.cards {
+  margin: -86px 0 0 -20px;
+}
+
+.offer-container {
+  margin: 1px 0 0 15px; 
+}
+
+.header-container {
+  margin: -18px 0 -17px;
+}
+
+.offer-header {
+  font-weight: 100;
+  font-size: 50px;
+  line-height: 1;
+  color: #fff;
+}
+
+.offer-text {
+  margin: 0 0 21px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.order-button {
+  width: 212px;
+  height: 62px;
+  border: none;
+  font-size: 17px;
+  line-height: 1.41;
+  text-align: center;
+  border-radius: 6px;
+  background-color: #ffdd2d;
+  color: #333;
+  cursor: pointer;
+}
