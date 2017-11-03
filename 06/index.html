@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html lang = "ru">
+  <head>
+    <meta charset = "utf-8">
+    <link rel = "stylesheet" href = "style.css">
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Roboto:100,300,400">
+    <link rel = "stylesheet" href = "https://necolas.github.io/normalize.css/7.0.0/normalize.css">
+    <link rel = "stylesheet/less" type = "text/css" href = "less/main.less">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+    <title>Задание 6.1</title>
+  </head>
+  <body>
+    <div class = "container">
+      <header class = "page-header">
+        <img src = "img/logo.svg" alt = "Тинькофф Банк" class = "page-header__logo">
+        <p class = "page-header__phone">8 800 555-11-22</p>
+      </header>
+    </div>
+    <div class = "container">
+      <div class = "menu-container">
+        <ul class = "menu">
+          <li class = "menu__point menu__point_active"><a class = "menu__point__title" href = "">карты</a></li>
+          <li class = "menu__point"><a class = "menu__point__title" href = "">вклады</a></li>
+          <li class = "menu__point"><a class = "menu__point__title" href = "">ПЛАТЕЖИ&nbsp;И&nbsp;ПЕРЕВОДЫ</a></li>
+          <li class = "menu__point"><a class = "menu__point__title" href = "">бонусы</a></li>
+          <li class = "menu__point"><a class = "menu__point__title" href = "">СТРАХОВАНИЕ</a></li>
+          <li class = "menu__point"><a class = "menu__point__title" href = "">О&nbsp;БАНКЕ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class = "container">
+      <div class = "offer-container">
+        <div class = "cards">
+          <img src = "img/cards.png" srcset = "img/cards@2x.png 2x, img/cards@3x.png 3x" class = "cards" alt = "cards">
+        </div>
+        <div class = cards__desc>
+          <h1 class = "cards__desc__header">Карты для&nbsp;вас<br>прямо сейчас</h1>
+          <div class = "cards__desc__text">Выбирайте&nbsp;карту,&nbsp;пользуйтесь<br>удобными&nbsp;сервисами</div>
+          <button class= "cards__desc__button" type = "button">Оформить&nbsp;заявку</button>
+        </div>
+      </div>
+    </div>
+
+    <div class = "container">
+      <h2 class = "tag-header">Любые категории платежей</h2>
+      <div class = "tag-container" contenteditable = "true">
+        <div class = "tag">
+          <span class = "tag__text">Кафе</span>
+          <button class = "tag__delete" type = "button"></button>
+        </div>
+        <div class = "tag">
+          <span class = "tag__text">Интернет</span>
+          <button class = "tag__delete" type = "button"></button>
+        </div>
+        <div class = "tag">
+          <span class = "tag__text">Телефон</span>
+          <button class = "tag__delete" type = "button"></button>
+        </div>
+        <div class = "tag">
+          <span class = "tag__text">Авто</span>
+          <button class = "tag__delete" type = "button"></button>
+        </div>
+        <div class = "tag">
+          <span class = "tag__text">ЖКХ</span>
+          <button class = "tag__delete" type = "button"></button>
+        </div>
+        <div class = "tag">
+          <span class = "tag__text">Одежда и обувь</span>
+          <button class = "tag__delete" type = "button"></button>
+        </div>
+        <div class = "tag">
+          <span class = "tag__text">Супермаркеты, гастрономы, универмаги и так далее и тому подобное</span>
+          <button class = "tag__delete" type = "button"></button>
+        </div>
+        <input class = "tag-input">
+      </div>
+    </div>
+
+    <div class = "container">
+      <h2 class = "form-header">Заполните несколько<br>простых полей</h2>
+      <form class = "form">
+        <div class = "form__field">
+          <input id = "name" type = "text" required class = "form__field__input">
+          <label for = "name" class = "form__field__label">ФИО</label>
+        </div>
+        <div class = "form__field form__field_error">
+          <input id = "city" type = "text" required class = "form__field__input form__field__input_error" value = "Ufa">
+          <label for = "city" class = "form__field__label form__field__label_error">Город проживания</label>
+          <div class = "exclamation"></div>
+        </div>
+        <div class = "warning">Для заполнения этого поля не допустимо использовать буквы латинского алфавита</div>
+        <div class = "form__field">
+          <input id = "mobile" type = "text" required class = "form__field__input">
+          <label for = "mobile" class = "form__field__label">Мобильный телефон</label>
+        </div>
+        <div class = "form__field">
+          <input id = "mail" type = "text" required class = "form__field__input">
+          <label for = "mail" class = "form__field__label">Электронная почта</label>
+          <div class = "question">
+            <span class = "question__text">Ваши данные замаскированы в целях безопасности. Для изменения информации с вами свяжется оператор колл-центра.</span>
+          </div>
+        </div>
+        <h2 class = "choice-header">Выберите это или другое</h2>
+        <div class = "choice">
+          <label class = "choice__label">
+            <input type = "radio" class = "choice__input" name = "choice-radio" checked>
+            <span class = "choice__mark"></span>
+            <span class = "choice__first-option">Это</span>
+          </label>
+          <label class = "choice__label">
+            <input type = "radio" class = "choice__input" name = "choice-radio">
+            <span class = "choice__mark"></span>
+            <span class = "choice__second-option">Другое</span>
+          </label>
+        </div>
+        
+        <div class = "button-container">
+          <button class = "submit-button" type = "submit">Отправить</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
