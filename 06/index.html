@@ -15,7 +15,68 @@
 </head>
 
 <body>
-
+    <div class="page">
+      <div class="page__body">
+        <header class="header"><a class="header__logo" href="#"></a>
+          <div class="header__phone">8 800 555-11-22</div>
+          <div class="header__menu"></div>
+        </header>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a class="nav__item nav__item_active" href="#">Карты</a>
+            <a class="nav__item" href="#">Вклады</a>
+            <a class="nav__item" href="#">Платежи и переводы</a>
+            <a class="nav__item" href="#">Бонусы</a>
+            <a class="nav__item" href="#">Страхование</a>
+            <a class="nav__item" href="#">О банке</a></nav>
+        </div>
+        <div class="banner-wrapper">
+          <div class="banner">
+            <div class="banner-info">
+              <h1 class="banner-info__title">Карты для&nbsp;вас прямо&nbsp;сейчас</h1>
+              <p class="banner-info__description">Выбирайте карту, пользуйтесь удобными&nbsp;сервисами</p>
+              <a class="banner-info__btn btn" href="#">Оформить заявку</a>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="forma">
+            <h2 class="forma__title title">Заполните несколько простых&nbsp;полей</h2>
+            <div class="forma__fields">
+              <div class="field-data field-data__icon field-cell">
+                <input class="field-data__input" type="text"><span class="field-data__label">ФИО</span>
+              </div>
+              <div class="field-data field-data_active field-data_error field-cell">
+                <input class="field-data__input" type="text" value="Petropavlovsk Kamchatskiy"><span class="field-data__label">Город проживания</span>
+                <p class="field-data__error-text">Для заполнения этого поля не допустимо использовать буквы латинского&nbsp;алфавита</p>
+              </div>
+              <div class="field-data field-cell">
+                <input class="field-data__input" type="text"><span class="field-data__label">Мобильный телефон</span>
+              </div>
+              <div class="field-data field-data__ask">
+                <input class="field-data__input" type="text"><span class="field-data__label">Электронная почта</span>
+              </div>
+            </div>
+            <h3 class="forma__subtitle subtitle">Выберите это или&nbsp;другое</h3>
+            <div class="forma__choice field-choice">
+              <div class="field-choice__half">
+                <div class="field-radio">
+                  <input class="field-radio__input" id="this" type="radio" name="radios" checked>
+                  <label class="field-radio__label" for="this">Это</label>
+                </div>
+              </div>
+              <div class="field-choice__half">
+                <div class="field-radio">
+                  <input class="field-radio__input" id="other" type="radio" name="radios">
+                  <label class="field-radio__label" for="other">Другое</label>
+                </div>
+              </div>
+            </div>
+            <a class="btn" href="#">Отправить</a>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 
 </html>
